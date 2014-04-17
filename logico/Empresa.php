@@ -11,7 +11,7 @@
  	 		$this->idEmpresa = $idEmpresa;
  	 		$this->titulo = $titulo;
  	 		$this->logo = $logo;
- 	 		$this->URL = $URL; 
+ 	 		$this->url = $URL; 
  	 		$this->direccion = $direccion; 
  	 		$this->telefono = $telefono; 
 		}
