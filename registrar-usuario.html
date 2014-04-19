@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+
+    <title>Registro usuarios</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+    <link href="css/signin.css" rel="stylesheet">
+   
+  </head>
+
+  <body> 	
+
+    <div class="container">
+
+      <form class="form-signin" role="form" action="controlador/ControllerUsuario.php" method="POST">
+        <h2 class="form-signin-heading">Registro usuario</h2>
+        <input name="usuario" type="text" class="form-control" placeholder="Usuario" required autofocus>
+        <input name="contrasena" type="text" class="form-control" placeholder="Contrasena" required autofocus>
+        <input name="rol" type="text" class="form-control" placeholder="Rol" required autofocus>
+        <input name="idEmpresa" type="text" class="form-control" placeholder="Empresa" required autofocus>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">registrar</button>
+      </form>
+
+    </div> 
+  </body>
+</html>
