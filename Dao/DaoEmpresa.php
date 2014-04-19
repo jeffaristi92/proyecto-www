@@ -14,7 +14,7 @@
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("INSERT INTO `empresa`(`titulo`, `logo`, `url`, `direccion`, `telefono`) VALUES (?,?,?,?,?)")){
+			if ($stmt = $conexion->prepare("INSERT INTO `Empresa`(`titulo`, `logo`, `url`, `direccion`, `telefono`) VALUES (?,?,?,?,?)")){
 	        
 		        $stmt->bind_param('sssss',$empresa->getTitulo(),$empresa->getLogo(),$empresa->getUrl(),$empresa->getDireccion(),$empresa->getTelefono());  
 		        $stmt->execute();   
