@@ -1,12 +1,16 @@
 <?php
 	
-require 'ControladorUsuario.php';
+	require_once '../controlador/ControladorUsuario.php';
 	
-	@$usuario = $_POST['usuario'];
-	@$contrasena = $_POST['contrasena'];
-	@$rol = $_POST['rol'];
-	@$idEmpresa = $_POST['idEmpresa'];
 	
-  	$controlador = new ControladorUsuario();
-  	$controlador->insertarUsuario($usuario,$contrasena,$rol,$idEmpresa);
+	if($_POST['usuario'] && $_POST['contrasenia'] && $_POST['rol'] && $_POST['idEmpresa']){
+		echo "we are in!";
+ 		$usuario = $_POST['usuario'];
+		$contrasena = $_POST['contrasenia'];
+		$rol = $_POST['rol'];
+		$idEmpresa = $_POST['idEmpresa'];
+		
+	  	$controlador = new ControladorUsuario();
+	  	$controlador->insertarUsuario($usuario,$contrasena,$rol,$idEmpresa);		
+	}  	
 ?>

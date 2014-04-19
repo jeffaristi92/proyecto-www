@@ -1,0 +1,12 @@
+
+INSERT INTO `Empresa`(`idEmpresa`, `titulo`, `logo`, `url`, `direccion`, `telefono`) VALUES (1,'admin',NULL,NULL,NULL,NULL),
+(2,'Empresa-2',NULL,'www.empresa-2.com','cra 18# 120 135','7564592'),
+(3,'Empresa-3',NULL,'www.empresa-3.com','cra 55# 63 7a','8886483');
+
+
+INSERT INTO `Usuario`(`usuario`, `contrasena`, `rol`, `idEmpresa`) VALUES 
+('admin',123456,'admin',1),
+('adminEmpresa',123456,'adminEmpresa',2),
+('cajero',123456,'cajero',2);
+
+

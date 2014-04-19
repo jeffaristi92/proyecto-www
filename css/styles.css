@@ -1,0 +1,19 @@
+select {
+	width: 300px;
+	border: 1px solid #cccccc;
+	background-color: #ffffff;
+	height: 40px;
+	font-size: 16px;
+	padding-left: 6px;
+}
+
+.enviar{
+	display: block;
+	background-color: rgb(56, 106, 211);
+	width: 100%;
+	color: #fff;
+	font-size: 18px;
+}
+.enviar:hover{	
+	color: #fff;
+}

@@ -18,8 +18,7 @@
 	        
 		        $stmt->bind_param('ssss',$usuario->getUsuario(),$usuario->getContrasena(),$usuario->getRol(),$usuario->getIdEmpresa());  
 		        $stmt->execute();   
-		        $stmt->store_result();
-				
+		        $stmt->store_result();		        
 	        	
 	        }//Fin consulta
 

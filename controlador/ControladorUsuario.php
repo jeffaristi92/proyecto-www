@@ -10,8 +10,7 @@
 		}
 		
 		public function insertarUsuario($usuario,$contrasena,$rol,$idEmpresa){
-			$Usuario = new Usuario($usuario,$contrasena,$rol,$idEmpresa);
-			//echo $this->empresa->getTitulo();
+			$Usuario = new Usuario($usuario,$contrasena,$rol,$idEmpresa);			
 			$this->daoUsuario->insertarUsuario($Usuario);
 		}
 	}
