@@ -4,13 +4,13 @@ require '../Dao/DaoLogin.php';
 
 	class ControladorLogin{
 
-		private $correo;
+		private $usuario;
 		private $contrasenia;
 		private $daoLogin;
 		
-		public function __construct($correo, $contrasenia){
+		public function __construct($usuario, $contrasenia){
 			
-			$this->correo = $correo;
+			$this->usuario = $usuario;
 			$this->contrasenia = $contrasenia;
 			$this->daoLogin = new DaoLogin();	
 			$this->verificarLogin();		
@@ -18,14 +18,19 @@ require '../Dao/DaoLogin.php';
 
 		public function verificarLogin(){
 			
-			$resultado = $this->daoLogin->consultarDatos($this->correo,$this->contrasenia);
+			$resultado = $this->daoLogin->consultarDatos($this->usuario,$this->contrasenia);
 
 			if($resultado){
-
-				echo "<script language='javascript'>window.location= '../View/Welcome.php'</script>";			
+				session_start();
+				if($_SESSION['acceso'] == 1){
+					header('Location: ../View/Welcome.php');
+				}
 
 			}else{
-				echo "Error ingresando al sistema. Por favor asegurese que este registrado en el sistema"; 
+				echo "<script type'text/javascript' language'javascript'>
+						alert('Por favor revise su usuario y contrasenia');
+						location.href='../index.php';
+					</script>";
 			}
 		}
 

@@ -2,9 +2,9 @@
 
 require 'ControladorLogin.php';
 
-  @$correo = $_POST['email'];
+  @$usuario = $_POST['usuario'];
   @$contrasenia = $_POST['password'];
 
-  $controlador = new ControladorLogin($correo, $contrasenia);  
+  $controlador = new ControladorLogin($usuario, $contrasenia);  
 
 ?>

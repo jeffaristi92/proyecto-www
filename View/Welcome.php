@@ -1,3 +1,17 @@
+
+<?php
+	session_start();
+
+	if(@$_SESSION['acceso'] != 1){
+
+		echo "<script type='text/javascript' language='javascript'>
+				alert('Para acceder a esta página es necesario que haya iniciado sesión');
+			 	location.href='../index.php';
+			</script>";	
+	}
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -12,7 +26,8 @@
 
 <body>
 
-	<h1>Usted ha ingresado al Sistema!</h1>
+	<h1><?php echo $_SESSION['rol'] ?> Usted ha ingresado al Sistema!</h1>
+	<a href="CerrarSesion.php">Cerrar Sesión</a>
 
 </body>
 </html>
