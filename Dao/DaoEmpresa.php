@@ -1,7 +1,7 @@
 <?php
 
-	require_once 'DataBase/DataBase.php';
-	require_once  'logico/Empresa.php';
+	require_once '../DataBase/DataBase.php';
+	require_once  '../logico/Empresa.php';
 	
 	class DaoEmpresa {
 		private $conexionBd;
@@ -17,7 +17,7 @@
 			if ($stmt = $conexion->prepare("INSERT INTO `Empresa`(`titulo`, `logo`, `url`, `direccion`, `telefono`) VALUES (?,?,?,?,?)")){
 	        
 		        $stmt->bind_param('sssss',$empresa->getTitulo(),$empresa->getLogo(),$empresa->getUrl(),$empresa->getDireccion(),$empresa->getTelefono());  
-		        $stmt->execute();   
+		        $stmt->execute();  
 		        $stmt->store_result();
 				
 	        	
