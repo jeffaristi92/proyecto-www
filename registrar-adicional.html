@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+
+    <title>Registro Adicionales</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+    <link href="css/signin.css" rel="stylesheet">
+   
+  </head>
+
+  <body> 	
+
+    <div class="container">
+
+      <form class="form-signin" role="form" action="controlador/ControllerAdicional.php" method="POST">
+        <h2 class="form-signin-heading">Registro Adicional</h2>
+        <input name="nombre" type="text" class="form-control" placeholder="Nombre" required autofocus>
+        <input name="ingredientes" type="text" class="form-control" placeholder="Ingredientes" required autofocus>
+        <input name="precio" type="number" class="form-control" placeholder="Precio" required autofocus>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">registrar</button>
+      </form>
+
+    </div> 
+  </body>
+</html>
