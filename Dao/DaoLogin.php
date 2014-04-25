@@ -30,6 +30,7 @@ require '../DataBase/DataBase.php';
 	                    
 	                    session_start();
 	                    $_SESSION['acceso'] = 1;
+						$_SESSION['usuario'] = $usuario;
 
 	                    if($u_rol == 'admin'){
 	                    	$_SESSION['rol'] = 'admin';

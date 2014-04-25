@@ -1,39 +1,31 @@
 <?php
-  session_start();
-
-  if(@$_SESSION['acceso'] == 1){
-
-    echo "<script type='text/javascript' language='javascript'>
-          location.href='View/Welcome.php';
-      </script>"; 
-  }
+include 'includes/header.php';
+include 'includes/barra-sesion.php';
 ?>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>BIENVENIDOS</h1>
+        <p>Reportes</p>
+        
 
-<!DOCTYPE html>
 
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">    
-    
-    <title>Login</title>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">    
-    <link href="css/signin.css" rel="stylesheet">    
-   
-  </head>
-
-  <body> 	
+        <!--
+        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+      	-->
+      </div>
+    </div>
 
     <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+    </div> <!-- /container -->
 
-      <form class="form-signin" role="form" action="Controller/Controller.php" method="POST">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input name="usuario" type="text" class="form-control" placeholder="User" required="" autofocus="">
-        <input name="password" type="password" class="form-control" placeholder="Password" required="">        
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-
-    </div> 
-  </body>
-</html>
+<?php
+include 'includes/footer.php';
+?>
