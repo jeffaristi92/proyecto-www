@@ -9,11 +9,11 @@
 
     <title>Registro Usuarios</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">    
-    <link href="css/signin.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">    
+    <link href="../css/signin.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
    
   </head>
 
@@ -33,7 +33,7 @@
         </select>
 
         <select id="empresas">
-		      <?php require 'Controller/getEmpresa.php';?>
+		      <?php require '../Controlador/getEmpresa.php';?>
 	  	  </select>
         
         <button class="btn enviar" type="submit">registrar</button>

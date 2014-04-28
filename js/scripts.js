@@ -17,7 +17,7 @@ function enviarFormulario(){
 
 		$.ajax({
 			type: "POST",
-			url: "controlador/ControllerUsuario.php",
+			url: "../Controlador/ControllerUsuario.php",
 			data: { usuario: nickName, contrasenia: password, rol: roles, idEmpresa: idEmp},
 			cache: false,
 			success: function(){				

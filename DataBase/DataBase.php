@@ -6,11 +6,11 @@
 		//LO IDEAL SERÍA QUE TODOS TUVIERAMOS LOS MISMOS NOMBRES PARA NO ESTAR MODIFICANDO ESTE ARCHIVO
 
 		private $servidor = 'localhost';
-		private $dbName = 'bd_www'; 
-		//private $dbName = 'www';
+		//private $dbName = 'bd_www'; 
+		private $dbName = 'www';
 		private $user = 'root';
-		private $password = 'root';
-		//private $password = 'john123';
+		//private $password = 'root';
+		private $password = 'john123';
 		private $mysqli;
 		
 	    public function conectar() {

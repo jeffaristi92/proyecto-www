@@ -1,6 +1,6 @@
 <?php
 	
-	require_once '../controlador/ControladorUsuario.php';
+	require_once ('ControladorUsuario.php');
 	
 	
 	if($_POST['usuario'] && $_POST['contrasenia'] && $_POST['rol'] && $_POST['idEmpresa']){

@@ -1,7 +1,7 @@
 <?php
 
-	require_once '../DataBase/DataBase.php';
-	require_once  '../logico/Usuario.php';
+	require_once ('../DataBase/DataBase.php');
+	require_once ('../Logico/Usuario.php');
 	
 	class DaoUsuario {
 		private $conexionBd;

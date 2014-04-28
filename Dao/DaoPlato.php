@@ -1,7 +1,7 @@
 <?php
 
-	require_once '../DataBase/DataBase.php';
-	require_once  '../logico/Plato.php';
+	require_once ('../DataBase/DataBase.php');
+	require_once ('../Logico/Plato.php');
 	
 	class DaoPlato {
 		private $conexionBd;

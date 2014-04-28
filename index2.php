@@ -27,7 +27,7 @@
 
     <div class="container">
 
-      <form class="form-signin" role="form" action="Controller/Controller.php" method="POST">
+      <form class="form-signin" role="form" action="Controlador/ControllerLogin.php" method="POST">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input name="usuario" type="text" class="form-control" placeholder="User" required="" autofocus="">
         <input name="password" type="password" class="form-control" placeholder="Password" required="">        

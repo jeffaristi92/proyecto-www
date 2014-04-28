@@ -8,8 +8,8 @@
 
     <title>Registro empresas</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">    
-    <link href="css/signin.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">    
+    <link href="../css/signin.css" rel="stylesheet">
    
   </head>
 
@@ -17,7 +17,7 @@
 
     <div class="container">
 
-      <form class="form-signin" role="form" action="controlador/ControllerEmpresa.php" method="POST">
+      <form class="form-signin" role="form" action="../Controlador/ControllerEmpresa.php" method="POST">
         <h2 class="form-signin-heading">Registro empresa</h2>
         <input name="titulo" type="text" class="form-control" placeholder="Titulo" required autofocus>
         <input name="logo" type="text" class="form-control" placeholder="Logo" required autofocus>

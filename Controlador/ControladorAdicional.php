@@ -1,6 +1,6 @@
 <?php
-	require_once '../Dao/DaoAdicional.php';
-	require_once  '../logico/Adicional.php';
+	require_once ('../Dao/DaoAdicional.php');
+	require_once ('../Logico/Adicional.php');
 	
 	class ControladorAdicional{
 		private $daoAdicional;

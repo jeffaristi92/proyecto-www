@@ -1,6 +1,6 @@
 <?php
 
-require '../Dao/DaoLogin.php';
+require_once ('../Dao/DaoLogin.php');
 
 	class ControladorLogin{
 
@@ -29,7 +29,7 @@ require '../Dao/DaoLogin.php';
 			}else{
 				echo "<script type'text/javascript' language'javascript'>
 						alert('Por favor revise su usuario y contrasenia');
-						location.href='../index.php';
+						location.href='../index2.php';
 					</script>";
 			}
 		}

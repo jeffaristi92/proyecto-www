@@ -1,6 +1,6 @@
 <?php
 
-require '../DataBase/DataBase.php';
+require_once ('../DataBase/DataBase.php');
 
 	class DaoLogin{
 

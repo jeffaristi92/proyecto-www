@@ -1,6 +1,6 @@
 <?php
-	require_once '../Dao/DaoPlato.php';
-	require_once  '../logico/Plato.php';
+	require_once ('../Dao/DaoPlato.php');
+	require_once ('../Logico/Plato.php');
 	
 	class ControladorPlato{
 		private $daoPlato;

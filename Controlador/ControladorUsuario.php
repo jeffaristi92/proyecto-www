@@ -1,6 +1,6 @@
 <?php
-	require_once '../Dao/DaoUsuario.php';
-	require_once  '../logico/Usuario.php';
+	require_once ('../Dao/DaoUsuario.php');
+	require_once ('../Logico/Usuario.php');
 	
 	class ControladorUsuario{
 		private $daoUsuario;

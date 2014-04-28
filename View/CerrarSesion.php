@@ -5,5 +5,5 @@
 ?>
 <script type"text/javascript" language"javascript">
 	alert('Usted ha cerrado sesión');
-	location.href="../index.php";
+	location.href="../index2.php";
 </script>
