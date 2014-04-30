@@ -8,7 +8,7 @@
 		
 	}else{
 		echo "<script type='text/javascript' language='javascript'>
-				alert('Para acceder a esta página es necesario que haya iniciado sesión');
+				alert('Para acceder a esta pagina es necesario que haya iniciado sesion');
 			 	location.href='../index.php';
 			</script>";	
 	}

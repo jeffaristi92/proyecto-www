@@ -4,7 +4,8 @@
   if(@$_SESSION['acceso'] == 1){
 
     echo "<script type='text/javascript' language='javascript'>
-          location.href='View/Welcome.php';
+          location.href='View/PanelAdminSistema.php';
+          
       </script>"; 
   }
 ?>
@@ -40,8 +41,7 @@
               <input name="password" type="password" class="form-control" required="">        
               <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
             </form>
-          </div>
-      
+          </div>      
 
     </div> <!--FIN Container-->
   </body>
