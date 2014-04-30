@@ -28,9 +28,10 @@
 
     <div class="container">
 
-      <h1>Bienvenido!</h1>
-      <p>Esta es la nueva forma de gestionar todas las operaciones de su empresa.</p>
-
+      <div class="header">
+        <h1>Bienvenido!</h1>
+        <p>Esta es la nueva forma de gestionar todas las operaciones de su empresa.</p>
+      </div>
           <div class="background_login">      
             <form class="form-signin" role="form" action="Controlador/ControllerLogin.php" method="POST">
               <label>Usuario:</label>
