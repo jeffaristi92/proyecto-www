@@ -1,3 +1,29 @@
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	background: #f6f6f6;
+}
+
+h1{
+	text-align: center;
+	color: rgb(78, 78, 78);
+	font-size: 60px;
+	margin-bottom: 15px;
+}
+
+p{	
+	color: rgb(100, 100, 100);
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 40px;
+}
+.background_login {
+	background-color: #fff;
+	width: 390px;
+	margin: 0 auto;	
+	border-radius: 4px;
+	box-shadow: 0 0 5px 0.4px rgba(0,0,0,0.6);
+}
 select {
 	width: 300px;
 	border: 1px solid #cccccc;
@@ -16,4 +42,38 @@ select {
 }
 .enviar:hover{	
 	color: #fff;
+}
+.form-signin {
+	padding-top: 41px;
+	padding-bottom: 34px;
+}
+.form-control {
+	border-radius: 0px;
+	margin-bottom: 15px;
+}
+.form-signin input[type="password"] {
+	margin-bottom: 24px;	
+}
+
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {	
+	.background_login{
+		width: 300px;
+	}
+	h1{
+		font-size: 54px;
+	}
+	p{
+		font-size: 15px;
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 420px) {	
+
+	.background_login{
+		width: 260px;
+	}
 }

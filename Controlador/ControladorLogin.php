@@ -23,13 +23,14 @@ require_once ('../Dao/DaoLogin.php');
 			if($resultado){
 				session_start();
 				if($_SESSION['acceso'] == 1){
-					header('Location: ../View/Welcome.php');
+					header('Location: ../View/PanelAdminSistema.php');
 				}
 
 			}else{
+				header('Content-Type: text/html; charset=UTF-8');//para que aparezan las tildes
 				echo "<script type'text/javascript' language'javascript'>
-						alert('Por favor revise su usuario y contrasenia');
-						location.href='../index2.php';
+						alert('Por favor revise su usuario y contraseña');
+						location.href='../index.php';
 					</script>";
 			}
 		}
