@@ -1,13 +1,24 @@
 <?php
   session_start();
 
-  if(@$_SESSION['acceso'] == 1){
+    if(@$_SESSION['acceso'] == 1 && @$_SESSION['rol'] == 'admin'){
 
-    echo "<script type='text/javascript' language='javascript'>
-          location.href='View/PanelAdminSistema.php';
-          
-      </script>"; 
-  }
+      echo "<script type='text/javascript' language='javascript'>
+            location.href='View/PanelAdminSistema.php';          
+          </script>"; 
+
+    }elseif(@$_SESSION['acceso'] == 1 && @$_SESSION['rol'] == 'adminEmpresa'){
+
+      echo "<script type='text/javascript' language='javascript'>
+            location.href='View/PanelAdminEmpresa.php';          
+          </script>"; 
+
+    }elseif(@$_SESSION['acceso'] == 1 && @$_SESSION['rol'] == 'cajero'){
+
+      echo "<script type='text/javascript' language='javascript'>
+            location.href='View/PanelCajero.php';          
+          </script>"; 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -21,27 +32,28 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">    
     <link href="css/signin.css" rel="stylesheet">    
-    <link href="css/styles.css" rel="stylesheet">    
-   
+    <link href="css/styles.css" rel="stylesheet"> 
+    <script src="js/jquery-2.1.0.min.js" type="text/javascript"></script>   
+    <script src="js/scripts.js" type="text/javascript"></script>      
   </head>
 
   <body> 	
 
     <div class="container">
 
-      <div class="header">
         <h1>Bienvenido!</h1>
         <p>Esta es la nueva forma de gestionar todas las operaciones de su empresa.</p>
-      </div>
+      
           <div class="background_login">      
-            <form class="form-signin" role="form" action="Controlador/ControllerLogin.php" method="POST">
+            <form class="form-signin" role="form" method="POST">
               <label>Usuario:</label>
-              <input name="usuario" type="text" class="form-control" required="" autofocus="">
+              <input name="usuario" type="text" class="form-control usuario" required="" autofocus="">
               <label>Contraseña:</label>
-              <input name="password" type="password" class="form-control" required="">        
-              <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
+              <input name="password" type="password" class="form-control password" required="">        
+              <button class="btn btn-lg btn-primary btn-block iniciar" type="submit">Iniciar Sesión</button>
             </form>
-          </div>      
+          </div>    
+          <div class="respuesta"></div>  
 
     </div> <!--FIN Container-->
   </body>

@@ -6,6 +6,13 @@ $(document).ready(function(){
 	    		enviarFormulario();
 	    	}
 	    );
+
+	    $(".iniciar").click(
+
+	    	function(){
+	    		login();
+	    	}
+	    );
 });
 
 function enviarFormulario(){
@@ -24,4 +31,24 @@ function enviarFormulario(){
 				alert('Usuario registrado exitosamente');
 			} 			
 		});
+}
+
+function login(){
+
+	var user = $(".usuario").val();
+	var pass = $(".password").val();				
+
+		console.log("Usuario: " + user);
+		console.log("password: " + pass);
+
+		$.ajax({
+			type: "POST",
+			url: "Controlador/ControllerLogin.php",
+			data: { usuario: user,
+					password: pass},
+			cache: false,
+			success: function(resultado){
+				$(".respuesta").html(resultado);				
+			}
+		});		
 }

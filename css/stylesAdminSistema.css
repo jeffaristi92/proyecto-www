@@ -1,0 +1,100 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	background: #f6f6f6;
+}
+.contenedor_menu{
+	height: 50px;
+}
+.menu{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	background: #5092bd;
+	width: 100%;
+	height: 50px;
+}
+.menu h1{
+	font-size: 24px;
+	margin-top: 12px;
+	margin-left: 20px;
+	float: left;
+}
+.menu a{
+	color: rgb(22, 29, 34);
+	padding-top: 14px;
+	padding-bottom: 21px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.menu .funciones{
+	height: 50px;
+	width: 163px;
+	float: left;
+	padding: 10px 8px;
+	margin-left: 140px;
+	text-align: center;
+}
+
+.menu .funciones a:hover{
+	background-color: #fff;
+}
+.pull-right {
+	margin: 14px 15px;
+}
+.pull-right a:hover{
+	color: rgb(22, 29, 34);
+	padding-top: 16px;
+	padding-bottom: 18px;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-decoration: none;
+}
+.pull-right a:hover{
+	background: rgb(223, 223, 223);
+}
+.contenedor_contenido{
+	margin-top: 50px;
+	width: 100%;
+}
+
+.contenedor_contenido .wrapper{
+	background-color: #fff;
+	padding: 15px 0px;
+	box-shadow: 1px 1px 1px rgba(50,50,50,0.09);
+	height: 450px;
+}
+
+.contenedor_contenido .wrapper h3{
+	margin: 15px 15px;
+	font-size: 18px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgb(221, 221, 221);
+}
+.form-signin {
+	padding-top: 41px;
+	padding-bottom: 34px;
+	padding-left: 60px;
+	margin-bottom: 15px;
+}
+select {
+	width: 75%;
+	border: 1px solid #cccccc;
+	background-color: #ffffff;
+	height: 40px;
+	font-size: 16px;
+	padding-left: 6px;
+	margin-bottom: 15px;
+}
+.form-control {
+	border-radius: 0px;
+	margin-bottom: 15px;
+	width: 75%;
+	height: 40px;
+}
+.enviar{
+	display: block;
+	float: right;
+	margin-right: 25%;
+	width: 100px;
+	font-size: 17px;
+}
