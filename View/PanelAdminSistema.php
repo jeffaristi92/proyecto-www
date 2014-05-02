@@ -34,10 +34,10 @@
 		<div class="menu">
 			 <h1>Bienvenido <?php echo $_SESSION['usuario']?>!</h1>
 			 <div class="funciones">
-				<a href="#" data-toggle="tooltip" data-placement="bottom" title="Usuarios">
+				<a class="a_usuario" href="#" data-toggle="tooltip" data-placement="bottom" title="Usuarios">
 					<img src="../img/user.png"/>
 				</a>
-				<a href="#" data-toggle="tooltip" data-placement="bottom" title="Empresas">
+				<a class="a_empresa" href="#" data-toggle="tooltip" data-placement="bottom" title="Empresas"> 
 					<img src="../img/company.png"/>
 				</a>
 			 </div>
@@ -49,7 +49,7 @@
 
     <div class="container contenedor_contenido">
 		<div class="row">
-			<div class="col-md-6 usuario">
+			<div class="col-md-6 usuario prueba">
 				<div class="wrapper">
 					<h3>Registrar Usuario</h3>	
 

@@ -13,6 +13,18 @@ $(document).ready(function(){
 	    		login();
 	    	}
 	    );
+
+	    /*Funciones para PanelAdminSistema animación anclas <a>*/
+	    $('.a_empresa').click(function(){
+										   
+			$('html, body').animate({ scrollTop: $(".empresa").offset().top }, 900);			   
+		});
+
+		$('.a_usuario').click(function(){
+										   
+			$('html, body').animate({ scrollTop: "0px" }, 900);			   
+		});
+	     /*Funciones para PanelAdminSistema animación anclas <a>*/
 });
 
 function enviarFormulario(){

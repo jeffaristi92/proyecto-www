@@ -12,6 +12,7 @@ body{
 	background: #5092bd;
 	width: 100%;
 	height: 50px;
+	z-index: 10;
 }
 .menu h1{
 	font-size: 24px;
