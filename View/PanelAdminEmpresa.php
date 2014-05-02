@@ -76,7 +76,7 @@
         <div class="wrapper">
           <h3>Registrar Adicional</h3>
 
-            <form class="form-signin" role="form" action="controlador/ControllerAdicional.php" method="POST">
+            <form class="form-signin" role="form" action="../Controlador/ControllerAdicional.php" method="POST">
               <input name="nombre" type="text" class="form-control" placeholder="Nombre" required>
               <input name="ingredientes" type="text" class="form-control" placeholder="Ingredientes" required>
               <input name="precio" type="number" class="form-control" placeholder="Precio" required>
