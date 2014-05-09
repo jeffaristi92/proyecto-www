@@ -23,7 +23,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">    
     <link href="../css/stylesAdminSistema.css" rel="stylesheet">  
     <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="../js/scripts.js"></script>  
+    <script type="text/javascript" src="../js/scriptsAdminSistema.js"></script>  
    
   </head>
 
@@ -67,7 +67,7 @@
 							      <?php require '../Controlador/getEmpresa.php';?>
 						  	</select>
 					        
-					        <button class="btn enviar" type="submit">registrar</button>
+					        <button class="btn enviar registrar_usuario" type="submit">registrar</button>
 				    	</form>
 				</div>
 			</div><!--Usuario-->
@@ -76,13 +76,13 @@
 				<div class="wrapper">
 					<h3>Registrar Empresa</h3>
 
-						<form class="form-signin" role="form" action="../Controlador/ControllerEmpresa.php" method="POST">				      
-					        <input name="titulo" type="text" class="form-control" placeholder="Titulo" required>
-					        <input name="logo" type="text" class="form-control" placeholder="Logo" required>
-					        <input name="url" type="text" class="form-control" placeholder="Url" required>
-					        <input name="direccion" type="text" class="form-control" placeholder="direccion" required> 
-					        <input name="telefono" type="text" class="form-control" placeholder="Telefono" required> 
-					        <button class="btn enviar" type="submit">registrar</button>
+						<form class="form-signin" role="form" method="POST">				      
+					        <input id="titulo" name="titulo" type="text" class="form-control" placeholder="Titulo" required>
+					        <input id="logo" name="logo" type="text" class="form-control" placeholder="Logo" required>
+					        <input id="url" name="url" type="text" class="form-control" placeholder="Url" required>
+					        <input id="direccion" name="direccion" type="text" class="form-control" placeholder="direccion" required> 
+					        <input id="telefono" name="telefono" type="text" class="form-control" placeholder="Telefono" required> 
+					        <button class="btn enviar registrar_empresa" type="submit">registrar</button>
 				    	</form>
 				</div>
 			</div><!--Empresa-->

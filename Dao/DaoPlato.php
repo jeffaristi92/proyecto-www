@@ -14,7 +14,7 @@
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("INSERT INTO `plato`(`nombre`, `ingredientes`, `fecha`, `imagen`, `Precio`, `activo`, `idEmpresa`) VALUES (?,?,?,?,?,?,?)")){
+			if ($stmt = $conexion->prepare("INSERT INTO `Plato`(`nombre`, `ingredientes`, `fecha`, `imagen`, `Precio`, `activo`, `idEmpresa`) VALUES (?,?,?,?,?,?,?)")){
 	        
 		        $stmt->bind_param('ssssdii',$plato->getNombre(),$plato->getIngredientes(),$plato->getFecha(),$plato->getImagen(),$plato->getPrecio(),$plato->getActivo(),$plato->getIdEmpresa());  
 		        $stmt->execute();   

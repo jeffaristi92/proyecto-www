@@ -53,7 +53,6 @@
               <button class="btn btn-lg btn-primary btn-block iniciar" type="submit">Iniciar Sesión</button>
             </form>
           </div>    
-          <div class="respuesta"></div>  
 
     </div> <!--FIN Container-->
   </body>
