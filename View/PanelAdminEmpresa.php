@@ -35,10 +35,10 @@
        <h1>Bienvenido <?php echo $_SESSION['usuario']?>!</h1>
        <div class="funciones">
         <a class="a_plato" href="#" data-toggle="tooltip" data-placement="bottom" title="Plato">
-          <img src="../img/user.png"/>
+          <img src="../img/plato.png"/>
         </a>
         <a class="a_adicional" href="#" data-toggle="tooltip" data-placement="bottom" title="Adicional"> 
-          <img src="../img/company.png"/>
+          <img src="../img/adicional.png"/>
         </a>
        </div>
        <ul class="pull-right">
