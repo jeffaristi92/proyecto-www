@@ -10,7 +10,7 @@
 		}
 		
 		public function insertarAdicional($nombre,$ingredientes,$precio){
-			$adicional = new Adicional(0,$nombre,$ingredientes,$precio);
+			$adicional = new Adicional($nombre,$ingredientes,$precio);
 			$this->daoAdicional->insertarAdicional($adicional);
 		}
 	}

@@ -9,8 +9,9 @@
 			$this->daoEmpresa = new DaoEmpresa();		
 		}
 		
-		public function insertarEmpresa($titulo,$logo,$url,$direccion,$telefono){
-			$empresa = new Empresa(0,$titulo,$logo,$url,$direccion,$telefono);
+		public function insertarEmpresa($titulo, $logo, $url, $direccion, $telefono){
+			
+			$empresa = new Empresa($titulo, $logo, $url, $direccion, $telefono);
 			$this->daoEmpresa->insertarEmpresa($empresa);
 		}
 	}

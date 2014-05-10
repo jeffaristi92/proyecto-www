@@ -4,7 +4,7 @@
 	
 	
 	if($_POST['usuario'] && $_POST['contrasenia'] && $_POST['rol'] && $_POST['idEmpresa']){
-		echo "we are in!";
+		
  		$usuario = $_POST['usuario'];
 		$contrasena = $_POST['contrasenia'];
 		$rol = $_POST['rol'];

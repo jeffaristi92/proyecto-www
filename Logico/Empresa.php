@@ -1,5 +1,6 @@
 <?php
 	class Empresa {
+
 		private $idEmpresa;
 		private $titulo;
 		private $logo;
@@ -7,8 +8,7 @@
 		private $direccion;
 		private $telefono;
 		
-		public function __construct($idEmpresa, $titulo, $logo, $URL, $direccion, $telefono){
- 	 		$this->idEmpresa = $idEmpresa;
+		public function __construct($titulo, $logo, $URL, $direccion, $telefono){
  	 		$this->titulo = $titulo;
  	 		$this->logo = $logo;
  	 		$this->url = $URL; 

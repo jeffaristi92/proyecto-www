@@ -79,10 +79,10 @@
 
 						<form class="form-signin" role="form" method="POST">				      
 					        <input id="titulo" type="text" class="form-control" placeholder="Titulo" required>
-					        <input id="logo" type="text" class="form-control" placeholder="Logo" required>
-					        <input id="url" type="text" class="form-control" placeholder="Url" required>
-					        <input id="direccion" type="text" class="form-control" placeholder="direccion" required> 
-					        <input id="telefono" type="text" class="form-control" placeholder="Telefono" required> 
+					        <input id="logo" type="text" class="form-control" placeholder="Logo">
+					        <input id="url" type="text" class="form-control" placeholder="Url">
+					        <input id="direccion" type="text" class="form-control" placeholder="Direccion"> 
+					        <input id="telefono" type="text" class="form-control" placeholder="Telefono"> 
 					        <button class="btn enviar registrar_empresa">registrar</button>
 				    	</form>
 				</div>

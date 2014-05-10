@@ -5,8 +5,7 @@
 		private $ingredientes;
 		private $precio;
 		
-		public function __construct($idAdicional, $nombre, $ingredientes, $precio){
- 	 		$this->idAdicional = $idAdicional;
+		public function __construct($nombre, $ingredientes, $precio){ 	 		
  	 		$this->nombre = $nombre;
  	 		$this->ingredientes = $ingredientes;
  	 		$this->precio = $precio;

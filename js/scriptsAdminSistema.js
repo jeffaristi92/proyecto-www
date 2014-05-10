@@ -41,7 +41,7 @@ function registrarUsuario(){
 			data: { usuario: nickName, contrasenia: password, rol: roles, idEmpresa: idEmp},
 			cache: false,
 			success: function(){				
-				alert('Usuario registrado exitosamente');
+				//mostrar mensaje
 			} 			
 		});
 }
@@ -60,7 +60,7 @@ function registrarEmpresa(){
 			data: { titulo: var_titulo, logo: var_logo, url: var_url, direccion: var_direccion, telefono: var_telefono},
 			cache: false,
 			success: function(){				
-				alert('Empresa registrado exitosamente');
+				//mostrar mensaje
 			} 			
 		});
 }
