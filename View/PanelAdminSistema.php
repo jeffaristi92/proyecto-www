@@ -48,14 +48,15 @@
     </div> <!--FIN Container-->
 
     <div class="container contenedor_contenido">
+
 		<div class="row">
-			<div class="col-md-6 usuario prueba">
+			<div class="col-md-6 usuario">
 				<div class="wrapper">
 					<h3>Registrar Usuario</h3>	
 
 						<form class="form-signin" role="form" method="POST">
-					        <input id="usuario" name="usuario" type="text" class="form-control" placeholder="Usuario" required autofocus>
-					        <input id="contrasenia" name="contrasena" type="text" class="form-control" placeholder="Contrasena" required>
+					        <input id="usuario" type="text" class="form-control" placeholder="Usuario" required autofocus>
+					        <input id="contrasenia" type="text" class="form-control" placeholder="Contrasena" required>
 					        
 					        <select id="roles">                    
 					          <option selected>cajero</option>         
@@ -67,7 +68,7 @@
 							      <?php require '../Controlador/getEmpresa.php';?>
 						  	</select>
 					        
-					        <button class="btn enviar registrar_usuario" type="submit">registrar</button>
+					        <button class="btn enviar registrar_usuario">registrar</button>
 				    	</form>
 				</div>
 			</div><!--Usuario-->
@@ -77,12 +78,12 @@
 					<h3>Registrar Empresa</h3>
 
 						<form class="form-signin" role="form" method="POST">				      
-					        <input id="titulo" name="titulo" type="text" class="form-control" placeholder="Titulo" required>
-					        <input id="logo" name="logo" type="text" class="form-control" placeholder="Logo" required>
-					        <input id="url" name="url" type="text" class="form-control" placeholder="Url" required>
-					        <input id="direccion" name="direccion" type="text" class="form-control" placeholder="direccion" required> 
-					        <input id="telefono" name="telefono" type="text" class="form-control" placeholder="Telefono" required> 
-					        <button class="btn enviar registrar_empresa" type="submit">registrar</button>
+					        <input id="titulo" type="text" class="form-control" placeholder="Titulo" required>
+					        <input id="logo" type="text" class="form-control" placeholder="Logo" required>
+					        <input id="url" type="text" class="form-control" placeholder="Url" required>
+					        <input id="direccion" type="text" class="form-control" placeholder="direccion" required> 
+					        <input id="telefono" type="text" class="form-control" placeholder="Telefono" required> 
+					        <button class="btn enviar registrar_empresa">registrar</button>
 				    	</form>
 				</div>
 			</div><!--Empresa-->

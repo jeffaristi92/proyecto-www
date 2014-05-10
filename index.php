@@ -47,10 +47,10 @@
           <div class="background_login">      
             <form class="form-signin" role="form" method="POST">
               <label>Usuario:</label>
-              <input name="usuario" type="text" class="form-control usuario" required="" autofocus="">
+              <input id="usuario" name="usuario" type="text" class="form-control" required="" autofocus="">
               <label>Contraseña:</label>
-              <input name="password" type="password" class="form-control password" required="">        
-              <button class="btn btn-lg btn-primary btn-block iniciar" type="submit">Iniciar Sesión</button>
+              <input id="password" type="password" class="form-control" required="">        
+              <button class="btn btn-lg btn-primary btn-block iniciar">Iniciar Sesión</button>
             </form>
           </div>    
 

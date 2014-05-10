@@ -14,7 +14,7 @@
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("INSERT INTO `adicional`(`Nombre`, `ingredientes`, `precio`) VALUES (?,?,?)")){
+			if ($stmt = $conexion->prepare("INSERT INTO `Adicional`(`Nombre`, `ingredientes`, `precio`) VALUES (?,?,?)")){
 	        
 		        $stmt->bind_param('ssd',$adicional->getNombre(),$adicional->getIngredientes(),$adicional->getPrecio());  
 		        $stmt->execute();   

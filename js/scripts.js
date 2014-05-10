@@ -10,8 +10,8 @@ $(document).ready(function(){
 
 function login(){
 
-	var user = $(".usuario").val();
-	var pass = $(".password").val();				
+	var user = $("#usuario").val();
+	var pass = $("#password").val();				
 
 		console.log("Usuario: " + user);
 		console.log("password: " + pass);
