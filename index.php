@@ -55,5 +55,12 @@
           </div>    
 
     </div> <!--FIN Container-->
+
+  <script>
+  $( ".iniciar" ).click(function() {
+    login()
+  });
+  </script>
+
   </body>
 </html>
