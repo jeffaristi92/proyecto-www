@@ -7,10 +7,12 @@
 
 		private $servidor = 'localhost';
 		//private $dbName = 'bd_www'; 
-		private $dbName = 'www';
+		//private $dbName = 'mydb';
+        private $dbName = 'mydb';
 		private $user = 'root';
 		//private $password = 'root';
-		private $password = 'john123';
+		//private $password = 'john123';
+        private $password = '';
 		private $mysqli;
 		
 	    public function conectar() {

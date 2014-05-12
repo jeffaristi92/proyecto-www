@@ -64,8 +64,6 @@
                     <option value="si">Activo</option>
                     <option value="no">No Activo</option>
                 </select>
-
-                <input name="idEmpresa" type="number" class="form-control" placeholder="Id de Empresa" required>
                 <button class="btn enviar" type="submit">Registrar</button>
               </form>
 

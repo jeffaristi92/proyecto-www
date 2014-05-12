@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
 	require_once ('../DataBase/DataBase.php');
 	require_once ('../Logico/Plato.php');
 	
@@ -14,7 +14,8 @@
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("INSERT INTO `Plato`(`nombre`, `ingredientes`, `fecha`, `imagen`, `Precio`, `activo`, `idEmpresa`) VALUES (?,?,?,?,?,?,?)")){
+			if ($stmt = $conexion->prepare("INSERT INTO `Plato`(`nombre`, `ingredientes`, `fecha`, `imagen`, `Precio`, `activo`, `idEmpresa`) VALUES (?,?,?,?,?,?,
+                                            (SELECT `idEmpresa` FROM `usuario` WHERE `usario`= " . $_SESSION['usuario']  . "))")){
 	        
 		        $stmt->bind_param('ssssdii',$plato->getNombre(),$plato->getIngredientes(),$plato->getFecha(),$plato->getImagen(),$plato->getPrecio(),$plato->getActivo(),$plato->getIdEmpresa());  
 		        $stmt->execute();   

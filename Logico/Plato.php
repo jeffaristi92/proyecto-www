@@ -7,9 +7,8 @@
         private $imagen;
         private $precio;
         private $activo;
-        private $idEmpresa;
 		
-		public function __construct($idPlato, $nombre, $ingredientes, $fecha, $imagen, $precio, $activo, $idEmpresa){
+		public function __construct($idPlato, $nombre, $ingredientes, $fecha, $imagen, $precio, $activo){
  	 		$this->idPlato = $idPlato;
  	 		$this->nombre = $nombre;
  	 		$this->ingredientes = $ingredientes;
@@ -17,7 +16,6 @@
             $this->imagen = $imagen;
  	 		$this->precio = $precio;
  	 		$this->activo = $activo;
- 	 		$this->idEmpresa = $idEmpresa;
 		}
 		
 		public function setIdPlato($id){
