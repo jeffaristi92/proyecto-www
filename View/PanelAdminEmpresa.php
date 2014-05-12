@@ -53,20 +53,20 @@
           <div class="wrapper">
             <h3>Registrar Plato</h3>  
 
-              <form class="form-signin" role="form" action="../Controlador/ControllerPlato.php" method="POST">
-                <input name="nombre" type="text" class="form-control" placeholder="Nombre" required autofocus>
-                <input name="ingredientes" type="text" class="form-control" placeholder="Ingredientes" required>
-                <input name="fecha" type="date" class="form-control" required>
-                <input name="imagen" type="text" class="form-control" placeholder="Imagen" required>
-                <input name="precio" type="number" class="form-control" placeholder="Precio" required>
+              <form class="form-signin" role="form" method="GET">
+                <input id="nombre"       type="text"   class="form-control" placeholder="Nombre" autofocus>
+                <input id="ingredientes" type="text"   class="form-control" placeholder="Ingredientes">
+                <input id="fecha"        type="date"   class="form-control">
+                <input id="imagen"       type="text"   class="form-control" placeholder="Imagen">
+                <input id="precio"       type="number" class="form-control" placeholder="Precio">
 
-                <select name="activo" class="form-control" required>
+                <select id="activo" class="form-control">
                     <option value="si">Activo</option>
                     <option value="no">No Activo</option>
                 </select>
 
-                <input name="idEmpresa" type="number" class="form-control" placeholder="Id de Empresa" required>
-                <button class="btn enviar" type="submit">Registrar</button>
+                <input id="idEmpresa"    type="number" class="form-control" placeholder="Id de Empresa">
+                <a class="btn enviar registrar_plato">Registrar</a>
               </form>
 
           </div>
@@ -76,16 +76,26 @@
           <div class="wrapper">
             <h3>Registrar Adicional</h3>
 
-              <form class="form-signin" role="form" method="POST">
-                <input id="nombre" type="text" class="form-control" placeholder="Nombre" required>
-                <input id="ingredientes" type="text" class="form-control" placeholder="Ingredientes">
-                <input id="precio" type="number" class="form-control" placeholder="Precio" required>
-                <button class="btn enviar registrar_adicional">Registrar</button>
-               </form>
+              <form class="form-signin"  role="form" method="GET">
+                <input id="nombre"       type="text"   class="form-control" placeholder="Nombre">
+                <input id="ingredientes" type="text"   class="form-control" placeholder="Ingredientes">
+                <input id="precio"       type="number" class="form-control" placeholder="Precio">
+                <a class="btn enviar registrar_adicional">Registrar</a>
+              </form>
+              <div id="respuesta"></div>
           </div>
         </div><!--adicional-->
-      </div>
+      </div><!--FIN row-->
     </div> <!--FIN Container-->
+
+    <script>
+      $( ".registrar_adicional" ).click(function() {
+        registrarAdicional();
+      });
+      $( ".registrar_plato" ).click(function() {
+        registrarPlato();
+      });
+    </script>
 
   </body>
 </html>

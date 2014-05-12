@@ -1,14 +1,6 @@
 $(document).ready(function(){
 
-	    $(".registrar_adicional").click(
-
-	    	function(){
-	    		registrarAdicional();
-	    	}
-	    );	   
-
-
-	      /*Funciones para PanelAdminEmpresa animación anclas <a>*/
+        /*Funciones para PanelAdminEmpresa animación anclas <a>*/
 	    $('.a_adicional').click(function(){
 										   
 			$('html, body').animate({ scrollTop: $(".adicional").offset().top }, 900);			   
@@ -18,23 +10,45 @@ $(document).ready(function(){
 										   
 			$('html, body').animate({ scrollTop: "0px" }, 900);			   
 		});
-	     /*Fin*/
+	    /*Fin*/
 
 });
 
-function registrarAdicional(){
-	
-	var var_nombre = $("#nombre").val();
-	var var_ingredientes = $("#ingredientes").val();
-	var var_precio = $("#precio").val();
+function registrarAdicional() {
+ 
+  var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("respuesta").innerHTML=xmlhttp.responseText;
+      }
+    }
 
-		$.ajax({
-			type: "POST",
-			url: "../Controlador/ControllerAdicional.php",
-			data: { nombre: var_nombre, ingredientes: var_ingredientes, precio: var_precio},
-			cache: false,
-			success: function(){				
-				//mostrar mensaje
-			} 			
-		});
+  	var nombre = $("#nombre").val();
+	var ingredientes = $("#ingredientes").val();
+	var precio = $("#precio").val();
+
+    xmlhttp.open("GET","../Controlador/ControllerAdicional.php?nombre="+nombre+"&ingredientes="+ingredientes+"&precio="+precio,true);
+    xmlhttp.send();
+}
+
+function registrarPlato() {
+ 
+  var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("respuesta").innerHTML=xmlhttp.responseText;
+      }
+    }
+
+  	var nombre = $("#nombre").val();
+	var ingredientes = $("#ingredientes").val();
+	var fecha = $("#fecha").val();
+	var imagen = $("#imagen").val();
+	var precio = $("#precio").val();
+	var activo = $("#activo").val();
+	var idEmpresa = $("#idEmpresa").val();
+
+    xmlhttp.open("GET","../Controlador/ControllerPlato.php?nombre="+nombre+"&ingredientes="+ingredientes+
+    			"&fecha="+fecha+"&imagen="+imagen+"&precio="+precio+"&activo="+activo+"&idEmpresa="+idEmpresa,true);
+    xmlhttp.send();
 }

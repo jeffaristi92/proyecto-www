@@ -3,9 +3,9 @@
 	class DataBase{
 	
 		private $servidor = 'localhost';		
-		private $dbName = 'clubtibu_www';
-		private $user = 'clubtibu_user';		
-		private $password = '9!i&zy$IA@ig35WWXqaGs9x';
+		private $dbName = 'www';
+		private $user = 'root';		
+		private $password = 'john123';
 		private $mysqli;
 		
 	    public function conectar() {

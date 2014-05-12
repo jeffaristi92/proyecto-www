@@ -2,20 +2,23 @@
 	
 require 'ControladorPlato.php';
 	
-	@$nombre = $_POST['nombre'];
-	@$ingredientes = $_POST['ingredientes'];
-    @$fecha = $_POST['fecha'];
-    @$imagen = $_POST['imagen'];
-	@$precio = $_POST['precio'];
-    @$activo = $_POST['activo'];
-    @$idEmpresa = $_POST['idEmpresa'];
+    if($_GET['nombre'] && $_GET['fecha'] && $_GET['precio'] && $_GET['activo'] && $_GET['idEmpresa']){
 
-    if($activo == "si"){
-        $activo = 1;
-    }else{
-        $activo = 0;
+    	@$nombre = $_GET['nombre'];
+    	@$ingredientes = $_GET['ingredientes'];
+        @$fecha = $_GET['fecha'];
+        @$imagen = $_GET['imagen'];
+    	@$precio = $_GET['precio'];
+        @$activo = $_GET['activo'];
+        @$idEmpresa = $_GET['idEmpresa'];
+
+        if($activo == "si"){
+            $activo = 1;
+        }else{
+            $activo = 0;
+        }
+    	
+      	$controlador = new ControladorPlato();
+      	$controlador->insertarPlato($nombre,$ingredientes,$fecha,$imagen,$precio,$activo,$idEmpresa);
     }
-	
-  	$controlador = new ControladorPlato();
-  	$controlador->insertarPlato($nombre,$ingredientes,$fecha,$imagen,$precio,$activo,$idEmpresa);
 ?>

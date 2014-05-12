@@ -14,8 +14,26 @@ $(document).ready(function(){
 
 });
 
-function registrarEmpresa() {
+function registrarUsuario() {
+ 
+  var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("respuesta").innerHTML=xmlhttp.responseText;
+      }
+    }
 
+    var usuario = $( "#usuario").val();
+    var contrasenia = $( "#contrasenia").val();
+    var rol = $( "#roles").val();
+    var idEmpresa = $( "#empresas").val();
+
+    xmlhttp.open("GET","../Controlador/ControllerUsuario.php?usuario="+usuario+"&contrasenia="+contrasenia+"&rol="+rol+"&idEmpresa="+idEmpresa,true);
+    xmlhttp.send();
+}
+
+function registrarEmpresa() {
+ 
 	var xmlhttp = new XMLHttpRequest();
   	xmlhttp.onreadystatechange=function() {
   		if (xmlhttp.readyState==4 && xmlhttp.status==200) {

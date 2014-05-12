@@ -33,7 +33,7 @@
     <div class="container contenedor_menu">
 		
 		<div class="menu">
-			 <h1>Bienvenido!</h1>
+			 <h1>Bienvenido <?php echo $_SESSION['usuario']?>!</h1>
 			 <div class="funciones">
 				<a class="a_usuario" href="#" data-toggle="tooltip" data-placement="bottom" title="Usuarios">
 					<img src="../img/user.png"/>
@@ -55,9 +55,9 @@
 				<div class="wrapper">
 					<h3>Registrar Usuario</h3>	
 
-						<form class="form-signin" role="form" method="POST">
-					        <input id="usuario" type="text" class="form-control" placeholder="Usuario" required autofocus>
-					        <input id="contrasenia" type="text" class="form-control" placeholder="Contrasena" required>
+						<form class="form-signin" role="form" method="GET">
+					        <input id="usuario"     type="text" class="form-control" placeholder="Usuario" autofocus>
+					        <input id="contrasenia" type="text" class="form-control" placeholder="Contrasena">
 					        
 					        <select id="roles">                    
 					          <option selected>cajero</option>         
@@ -68,9 +68,9 @@
 					        <select id="empresas">
 							      <?php require '../Controlador/getEmpresa.php';?>
 						  	</select>
-					        
-					        <button class="btn enviar registrar_usuario">registrar</button>
+					        <a class="btn enviar registrar_usuario">Registrar</a>
 				    	</form>
+				    	<div id="respuesta"></div>
 				</div>
 			</div><!--Usuario-->
 
@@ -79,12 +79,12 @@
 					<h3>Registrar Empresa</h3>
 
 					<form class="form-signin" role="form" method="GET">
-				        <input id="titulo"    class="form-control" type="text" placeholder="Titulo" required>
+				        <input id="titulo"    class="form-control" type="text" placeholder="Titulo">
 				        <input id="logo"      class="form-control" type="text" placeholder="Logo">
 				        <input id="url"       class="form-control" type="text" placeholder="Url">
 				        <input id="direccion" class="form-control" type="text" placeholder="Direccion">
 				        <input id="telefono"  class="form-control" type="text" placeholder="Telefono"> 
-				        <a class="enviar registrar_empresa">Registrar</a>
+				        <a class="btn enviar registrar_empresa">Registrar</a>
 				    </form>
 				</div>
 			</div><!--Empresa-->
@@ -94,6 +94,10 @@
 	<script>
   		$( ".registrar_empresa" ).click(function() {
     		registrarEmpresa();
+  		});
+
+  		$( ".registrar_usuario" ).click(function() {
+    		registrarUsuario();
   		});
   	</script>
 

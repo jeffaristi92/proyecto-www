@@ -2,11 +2,11 @@
 	
 require 'ControladorAdicional.php';
 	
-	if($_POST['nombre'] && $_POST['precio']){
+	if($_GET['nombre'] && $_GET['precio']){
 
-		@$nombre = $_POST['nombre'];
-		@$ingredientes = $_POST['ingredientes'];
-		@$precio = $_POST['precio'];
+		@$nombre = $_GET['nombre'];
+		@$ingredientes = $_GET['ingredientes'];
+		@$precio = $_GET['precio'];
 		
 	  	$controlador = new ControladorAdicional();
 	  	$controlador->insertarAdicional($nombre,$ingredientes,$precio);
