@@ -8,6 +8,7 @@ require 'ControladorPlato.php';
     @$imagen = $_POST['imagen'];
 	@$precio = $_POST['precio'];
     @$activo = $_POST['activo'];
+    @$idEmpresa = $_POST['idEmpresa'];
 
     if($activo == "si"){
         $activo = 1;
@@ -16,5 +17,5 @@ require 'ControladorPlato.php';
     }
 	
   	$controlador = new ControladorPlato();
-  	$controlador->insertarPlato($nombre,$ingredientes,$fecha,$imagen,$precio,$activo);
+  	$controlador->insertarPlato($nombre,$ingredientes,$fecha,$imagen,$precio,$activo,$idEmpresa);
 ?>

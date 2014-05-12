@@ -9,8 +9,8 @@
 			$this->daoPlato = new DaoPlato();		
 		}
 		
-		public function insertarPlato($nombre,$ingredientes,$fecha,$imagen,$precio,$activo){
-			$plato = new Plato(0,$nombre,$ingredientes,$fecha,$imagen,$precio,$activo);
+		public function insertarPlato($nombre,$ingredientes,$fecha,$imagen,$precio,$activo,$idEmpresa){
+			$plato = new Plato(0,$nombre,$ingredientes,$fecha,$imagen,$precio,$activo,$idEmpresa);
 			$this->daoPlato->insertarPlato($plato);
 		}
 	}

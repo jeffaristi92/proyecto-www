@@ -2,17 +2,10 @@
 	
 	class DataBase{
 	
-		//CAMBIAR VARIABLES DE ACUERDO A SU CONFIGURACIÓN
-		//LO IDEAL SERÍA QUE TODOS TUVIERAMOS LOS MISMOS NOMBRES PARA NO ESTAR MODIFICANDO ESTE ARCHIVO
-
-		private $servidor = 'localhost';
-		//private $dbName = 'bd_www'; 
-		//private $dbName = 'mydb';
-        private $dbName = 'mydb';
-		private $user = 'root';
-		//private $password = 'root';
-		//private $password = 'john123';
-        private $password = '';
+		private $servidor = 'localhost';		
+		private $dbName = 'clubtibu_www';
+		private $user = 'clubtibu_user';		
+		private $password = '9!i&zy$IA@ig35WWXqaGs9x';
 		private $mysqli;
 		
 	    public function conectar() {

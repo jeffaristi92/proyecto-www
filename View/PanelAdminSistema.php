@@ -2,7 +2,7 @@
    session_start();
 
 	if(@$_SESSION['acceso'] == 1 && @$_SESSION['rol'] == 'admin'){
-				
+
 	}else{
 		echo "<script type='text/javascript' language='javascript'>
 				location.href='../index.php';
@@ -24,6 +24,7 @@
     <link href="../css/stylesAdminSistema.css" rel="stylesheet">  
     <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="../js/scriptsAdminSistema.js"></script>  
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script> 
    
   </head>
 
@@ -32,7 +33,7 @@
     <div class="container contenedor_menu">
 		
 		<div class="menu">
-			 <h1>Bienvenido <?php echo $_SESSION['usuario']?>!</h1>
+			 <h1>Bienvenido!</h1>
 			 <div class="funciones">
 				<a class="a_usuario" href="#" data-toggle="tooltip" data-placement="bottom" title="Usuarios">
 					<img src="../img/user.png"/>
@@ -77,18 +78,24 @@
 				<div class="wrapper">
 					<h3>Registrar Empresa</h3>
 
-						<form class="form-signin" role="form" method="POST">				      
-					        <input id="titulo" type="text" class="form-control" placeholder="Titulo" required>
-					        <input id="logo" type="text" class="form-control" placeholder="Logo">
-					        <input id="url" type="text" class="form-control" placeholder="Url">
-					        <input id="direccion" type="text" class="form-control" placeholder="Direccion"> 
-					        <input id="telefono" type="text" class="form-control" placeholder="Telefono"> 
-					        <button class="btn enviar registrar_empresa">registrar</button>
-				    	</form>
+					<form class="form-signin" role="form" method="GET">
+				        <input id="titulo"    class="form-control" type="text" placeholder="Titulo" required>
+				        <input id="logo"      class="form-control" type="text" placeholder="Logo">
+				        <input id="url"       class="form-control" type="text" placeholder="Url">
+				        <input id="direccion" class="form-control" type="text" placeholder="Direccion">
+				        <input id="telefono"  class="form-control" type="text" placeholder="Telefono"> 
+				        <a class="enviar registrar_empresa">Registrar</a>
+				    </form>
 				</div>
 			</div><!--Empresa-->
 		</div>
     </div> <!--FIN Container-->
+
+	<script>
+  		$( ".registrar_empresa" ).click(function() {
+    		registrarEmpresa();
+  		});
+  	</script>
 
   </body>
 </html>

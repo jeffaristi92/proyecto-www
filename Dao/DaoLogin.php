@@ -34,14 +34,15 @@ require_once ('../DataBase/DataBase.php');
 
 	                    if($u_rol == 'admin'){
 	                    	$_SESSION['rol'] = 'admin';
-
+	                    	
 	                    }elseif($u_rol == 'adminEmpresa'){
-	                    	$_SESSION['rol'] = 'adminEmpresa';	                    	
 
+	                    	$_SESSION['rol'] = 'adminEmpresa';	                    	
+	                    	
 	                    }else{
 	                    	$_SESSION['rol'] = 'cajero';
 	                    }
-
+	                    
 	                    return true;
 
 	                } else {
@@ -49,7 +50,7 @@ require_once ('../DataBase/DataBase.php');
 	                }
 
 	            }else {            
-	            	return false;//no hay ningún usuario con ese correo
+	            	return false;//no hay ningún usuario con ese nick
 	        	}	
 	        	
 	        }//Fin consulta

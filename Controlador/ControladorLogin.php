@@ -13,7 +13,6 @@ require_once ('../Dao/DaoLogin.php');
 			$this->usuario = $usuario;
 			$this->contrasenia = $contrasenia;
 			$this->daoLogin = new DaoLogin();	
-			$this->verificarLogin();		
 		}
 
 		public function verificarLogin(){
@@ -22,19 +21,22 @@ require_once ('../Dao/DaoLogin.php');
 
 			if($resultado){
 
-				session_start();
+				
 				if($_SESSION['acceso'] == 1 && $_SESSION['rol'] == 'admin'){
-					header('location: ../View/PanelAdminSistema.php');
+					
+					return "admin";
 
 				}elseif($_SESSION['acceso'] == 1 && $_SESSION['rol'] == 'adminEmpresa'){
-					header('location: ../View/PanelAdminEmpresa.php');
+						
+					return "adminEmpresa";
 
 				}elseif($_SESSION['acceso'] == 1 && $_SESSION['rol'] == 'cajero'){
-					header('location: ../View/PanelCajero.php');
+						
+					return "cajero";
 				}
 
 			}else{
-				echo "<h4>Por favor revise su usuario y contraseña</h4>";
+				echo "<h5 class='mensaje'>Por favor revise su usuario y contraseña</h5>";
 			}
 		}
 

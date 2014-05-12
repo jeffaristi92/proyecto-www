@@ -1,19 +1,5 @@
 $(document).ready(function(){
 
-	    $(".registrar_usuario").click(
-
-	    	function(){
-	    		registrarUsuario();
-	    	}
-	    );	   
-
-	     $(".registrar_empresa").click(
-
-	    	function(){
-	    		registrarEmpresa();
-	    	}
-	    );
-
 	      /*Funciones para PanelAdminSistema animación anclas <a>*/
 	    $('.a_empresa').click(function(){
 										   
@@ -28,39 +14,21 @@ $(document).ready(function(){
 
 });
 
-function registrarUsuario(){
-	
-	var nickName = $("#usuario").val();
-	var password = $("#contrasenia").val();
-	var roles = $("#roles").val();
-	var idEmp = $("#empresas").val();
+function registrarEmpresa() {
 
-		$.ajax({
-			type: "POST",
-			url: "../Controlador/ControllerUsuario.php",
-			data: { usuario: nickName, contrasenia: password, rol: roles, idEmpresa: idEmp},
-			cache: false,
-			success: function(){				
-				//mostrar mensaje
-			} 			
-		});
-}
+	var xmlhttp = new XMLHttpRequest();
+  	xmlhttp.onreadystatechange=function() {
+  		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+    		document.getElementById("respuesta").innerHTML=xmlhttp.responseText;
+    	}
+  	}
 
-function registrarEmpresa(){
-	
-	var var_titulo = $("#titulo").val();
-	var var_logo = $("#logo").val();
-	var var_url = $("#url").val();
-	var var_direccion = $("#direccion").val();
-	var var_telefono = $("#telefono").val();
+  	var titulo = $( "#titulo").val();
+  	var logo = $( "#logo").val();
+  	var url = $( "#url").val();
+  	var direccion = $( "#direccion").val();
+  	var telefono = $( "#telefono").val();
 
-		$.ajax({
-			type: "POST",
-			url: "../Controlador/ControllerEmpresa.php",
-			data: { titulo: var_titulo, logo: var_logo, url: var_url, direccion: var_direccion, telefono: var_telefono},
-			cache: false,
-			success: function(){				
-				//mostrar mensaje
-			} 			
-		});
+  	xmlhttp.open("GET","../Controlador/ControllerEmpresa.php?titulo="+titulo+"&logo="+logo+"&url="+url+"&direccion="+direccion+"&telefono="+telefono,true);
+  	xmlhttp.send();
 }

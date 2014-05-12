@@ -21,6 +21,7 @@
     }
 ?>
 
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -45,22 +46,23 @@
         <p>Esta es la nueva forma de gestionar todas las operaciones de su empresa.</p>
       
           <div class="background_login">      
-            <form class="form-signin" role="form" method="POST">
+            <form class="form-signin" role="form" method="GET">
               <label>Usuario:</label>
               <input id="usuario" name="usuario" type="text" class="form-control" required="" autofocus="">
               <label>Contraseña:</label>
-              <input id="password" type="password" class="form-control" required="">        
-              <button class="btn btn-lg btn-primary btn-block iniciar">Iniciar Sesión</button>
+              <input id="password" name="password" type="password" class="form-control" required="">        
+              <a class="btn btn-lg btn-primary btn-block sesion">Iniciar Sesión</a>
             </form>
-          </div>    
 
+            <div id="respuesta"></div>
+          </div>          
     </div> <!--FIN Container-->
-
-  <script>
-  $( ".iniciar" ).click(function() {
-    login()
-  });
-  </script>
-
+    
+    <script>
+      $( ".sesion" ).click(function() {
+        login();
+      });
+    </script>
+    
   </body>
 </html>
