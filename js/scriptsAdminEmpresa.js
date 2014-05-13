@@ -23,9 +23,9 @@ function registrarAdicional() {
       }
     }
 
-  	var nombre = $("#nombre").val();
-	var ingredientes = $("#ingredientes").val();
-	var precio = $("#precio").val();
+  var nombre = $("#nombre_a").val();
+	var ingredientes = $("#ingredientes_a").val();
+	var precio = $("#precio_a").val();
 
     xmlhttp.open("GET","../Controlador/ControllerAdicional.php?nombre="+nombre+"&ingredientes="+ingredientes+"&precio="+precio,true);
     xmlhttp.send();
@@ -46,7 +46,7 @@ function registrarPlato() {
 	var imagen = $("#imagen").val();
 	var precio = $("#precio").val();
 	var activo = $("#activo").val();
-	var idEmpresa = $("#idEmpresa").val();
+	var idEmpresa = document.getElementById("idEmpresa").innerHTML;
 
     xmlhttp.open("GET","../Controlador/ControllerPlato.php?nombre="+nombre+"&ingredientes="+ingredientes+
     			"&fecha="+fecha+"&imagen="+imagen+"&precio="+precio+"&activo="+activo+"&idEmpresa="+idEmpresa,true);

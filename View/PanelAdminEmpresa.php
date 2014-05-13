@@ -1,7 +1,7 @@
 <?php	
    session_start();
 
-  	if(@$_SESSION['acceso'] == 1 && $_SESSION['rol'] == 'adminEmpresa'){
+  	if(@$_SESSION['acceso'] == 1 && @$_SESSION['rol'] == 'adminEmpresa'){
   		
   	}else{
   		echo "<script type='text/javascript' language='javascript'>
@@ -64,8 +64,7 @@
                     <option value="si">Activo</option>
                     <option value="no">No Activo</option>
                 </select>
-
-                <input id="idEmpresa"    type="number" class="form-control" placeholder="Id de Empresa">
+                <div id="idEmpresa" style="display: none;"><?php echo $_SESSION['empresa'] ?></div>   
                 <a class="btn enviar registrar_plato">Registrar</a>
               </form>
 
@@ -77,9 +76,9 @@
             <h3>Registrar Adicional</h3>
 
               <form class="form-signin"  role="form" method="GET">
-                <input id="nombre"       type="text"   class="form-control" placeholder="Nombre">
-                <input id="ingredientes" type="text"   class="form-control" placeholder="Ingredientes">
-                <input id="precio"       type="number" class="form-control" placeholder="Precio">
+                <input id="nombre_a"       type="text"   class="form-control" placeholder="Nombre">
+                <input id="ingredientes_a" type="text"   class="form-control" placeholder="Ingredientes">
+                <input id="precio_a"       type="number" class="form-control" placeholder="Precio">
                 <a class="btn enviar registrar_adicional">Registrar</a>
               </form>
               <div id="respuesta"></div>
