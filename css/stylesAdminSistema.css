@@ -72,7 +72,7 @@ body{
 	border-bottom: 1px solid rgb(221, 221, 221);
 }
 .form-signin {
-	padding-top: 41px;
+	padding-top: 20px;
 	padding-bottom: 34px;
 	padding-left: 60px;
 	margin-bottom: 15px;
@@ -96,6 +96,14 @@ select {
 	text-decoration: none;
 	color: rgb(0, 0, 0);
 }
+
+#respuesta_usuario, #respuesta_empresa, #respuesta_plato, #respuesta_adicional{
+	color: rgb(19, 83, 179);
+	margin-top: 17px;
+	float: left;
+	display: inline-block;
+}
+
 .enviar{
 	display: block;
 	float: right;

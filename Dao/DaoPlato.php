@@ -19,7 +19,7 @@
 		        $stmt->bind_param('ssssdii',$plato->getNombre(),$plato->getIngredientes(),$plato->getFecha(),$plato->getImagen(),$plato->getPrecio(),$plato->getActivo(),$plato->getIdEmpresa());  
 		        $stmt->execute();   
 		        $stmt->store_result();
-				
+				echo "*Plato registrado con éxito";//mensaje para mostrar al usuario
 	        	
 	        }//Fin consulta
 

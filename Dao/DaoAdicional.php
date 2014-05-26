@@ -19,7 +19,7 @@
 		        $stmt->bind_param('ssd',$adicional->getNombre(),$adicional->getIngredientes(),$adicional->getPrecio());  
 		        $stmt->execute();   
 		        $stmt->store_result();
-				
+				echo "*Adicional registrado con éxito";//mensaje para mostrar al usuario
 	        	
 	        }//Fin consulta
 

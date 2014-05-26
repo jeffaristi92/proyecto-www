@@ -48,12 +48,11 @@
           <div class="background_login">      
             <form class="form-signin" role="form" method="GET">
               <label>Usuario:</label>
-              <input id="usuario" name="usuario" type="text" class="form-control" required="" autofocus="">
+              <input id="usuario" name="usuario" type="text" class="form-control" onkeydown="enter();" autofocus="">
               <label>Contraseña:</label>
-              <input id="password" name="password" type="password" class="form-control" required="">        
+              <input id="password" name="password" type="password" class="form-control" onkeydown="enter();">        
               <a class="btn btn-lg btn-primary btn-block sesion">Iniciar Sesión</a>
             </form>
-
             <div id="respuesta"></div>
           </div>          
     </div> <!--FIN Container-->

@@ -19,7 +19,7 @@
 		        $stmt->bind_param('ssss',$usuario->getUsuario(),$usuario->getContrasena(),$usuario->getRol(),$usuario->getIdEmpresa());  
 		        $stmt->execute();   
 		        $stmt->store_result();		        
-	        	
+	        	echo "*Usuario registrado con éxito";//mensaje para mostrar al usuario
 	        }//Fin consulta
 
 			$this->conexionBd->desconectar($conexion);			

@@ -19,7 +19,7 @@ function registrarAdicional() {
   var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-        document.getElementById("respuesta").innerHTML=xmlhttp.responseText;
+        document.getElementById("respuesta_adicional").innerHTML=xmlhttp.responseText;
       }
     }
 
@@ -36,11 +36,11 @@ function registrarPlato() {
   var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-        document.getElementById("respuesta").innerHTML=xmlhttp.responseText;
+        document.getElementById("respuesta_plato").innerHTML=xmlhttp.responseText;
       }
     }
 
-  	var nombre = $("#nombre").val();
+  var nombre = $("#nombre").val();
 	var ingredientes = $("#ingredientes").val();
 	var fecha = $("#fecha").val();
 	var imagen = $("#imagen").val();

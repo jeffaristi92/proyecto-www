@@ -10,7 +10,7 @@ function login() {
   	}
 
   	var user = $("#usuario").val();
-	var pass = $("#password").val();	
+	  var pass = $("#password").val();	
 
   	xmlhttp.open("GET","Controlador/ControllerLogin.php?usuario="+user+"&password="+pass,true);
   	xmlhttp.send();
@@ -34,4 +34,12 @@ function redireccionar(respuesta) {
     document.getElementById("respuesta").innerHTML=respuesta;
   }
   
+}
+
+function enter(){
+    
+    var enterKey = 13;
+    if (event.keyCode == enterKey){
+        login();
+    }
 }

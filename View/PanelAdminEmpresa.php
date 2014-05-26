@@ -66,8 +66,8 @@
                 </select>
                 <div id="idEmpresa" style="display: none;"><?php echo $_SESSION['empresa'] ?></div>   
                 <a class="btn enviar registrar_plato">Registrar</a>
+                <div id="respuesta_plato"></div>
               </form>
-
           </div>
         </div><!--plato-->
 
@@ -80,8 +80,8 @@
                 <input id="ingredientes_a" type="text"   class="form-control" placeholder="Ingredientes">
                 <input id="precio_a"       type="number" class="form-control" placeholder="Precio">
                 <a class="btn enviar registrar_adicional">Registrar</a>
+                <div id="respuesta_adicional"></div>
               </form>
-              <div id="respuesta"></div>
           </div>
         </div><!--adicional-->
       </div><!--FIN row-->

@@ -10,7 +10,6 @@
 	}	
 ?>
 
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -57,7 +56,7 @@
 
 						<form class="form-signin" role="form" method="GET">
 					        <input id="usuario"     type="text" class="form-control" placeholder="Usuario" autofocus>
-					        <input id="contrasenia" type="text" class="form-control" placeholder="Contrasena">
+					        <input id="contrasenia" type="password" class="form-control" placeholder="Contraseña">
 					        
 					        <select id="roles">                    
 					          <option selected>cajero</option>         
@@ -69,8 +68,8 @@
 							      <?php require '../Controlador/getEmpresa.php';?>
 						  	</select>
 					        <a class="btn enviar registrar_usuario">Registrar</a>
+					        <div id="respuesta_usuario"></div>
 				    	</form>
-				    	<div id="respuesta"></div>
 				</div>
 			</div><!--Usuario-->
 
@@ -79,12 +78,13 @@
 					<h3>Registrar Empresa</h3>
 
 					<form class="form-signin" role="form" method="GET">
-				        <input id="titulo"    class="form-control" type="text" placeholder="Titulo">
+				        <input id="titulo"    class="form-control" type="text" placeholder="Título">
 				        <input id="logo"      class="form-control" type="text" placeholder="Logo">
 				        <input id="url"       class="form-control" type="text" placeholder="Url">
-				        <input id="direccion" class="form-control" type="text" placeholder="Direccion">
-				        <input id="telefono"  class="form-control" type="text" placeholder="Telefono"> 
+				        <input id="direccion" class="form-control" type="text" placeholder="Dirección">
+				        <input id="telefono"  class="form-control" type="text" placeholder="Teléfono"> 
 				        <a class="btn enviar registrar_empresa">Registrar</a>
+				        <div id="respuesta_empresa"></div>
 				    </form>
 				</div>
 			</div><!--Empresa-->

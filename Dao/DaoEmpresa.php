@@ -19,7 +19,7 @@
 		        $stmt->bind_param('sssss',$empresa->getTitulo(),$empresa->getLogo(),$empresa->getUrl(),$empresa->getDireccion(),$empresa->getTelefono());  
 		        $stmt->execute();  
 		        $stmt->store_result();
-				
+				echo "*Empresa registrada con éxito";//mensaje para mostrar al usuario
 	        	
 	        }//Fin consulta
 
