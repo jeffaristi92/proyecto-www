@@ -1,17 +1,16 @@
 $(document).ready(function(){
 
-        /*Funciones para PanelAdminEmpresa animación anclas <a>*/
+      /*Funciones para PanelAdminEmpresa animación anclas <a>*/
 	    $('.a_adicional').click(function(){
 										   
 			$('html, body').animate({ scrollTop: $(".adicional").offset().top }, 900);			   
-		});
+		  });
 
-		$('.a_plato').click(function(){
+		  $('.a_plato').click(function(){
 										   
 			$('html, body').animate({ scrollTop: "0px" }, 900);			   
-		});
-	    /*Fin*/
-
+		  });
+	    /*Fin*/      
 });
 
 function registrarAdicional() {
@@ -50,5 +49,29 @@ function registrarPlato() {
 
     xmlhttp.open("GET","../Controlador/ControllerPlato.php?nombre="+nombre+"&ingredientes="+ingredientes+
     			"&fecha="+fecha+"&imagen="+imagen+"&precio="+precio+"&activo="+activo+"&idEmpresa="+idEmpresa,true);
+    xmlhttp.send();
+}
+
+function listarPlatos() {
+ 
+  var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("platos").innerHTML=xmlhttp.responseText;
+        //$('.activos').multiSelect();
+
+        $('.activos').multiSelect({
+            afterSelect: function(values){
+                alert("Select value: "+values);
+            },
+            afterDeselect: function(values){
+                alert("Deselect value: "+values);
+            }
+        });
+
+      }
+    }
+
+    xmlhttp.open("GET","../Controlador/getPlatos.php",true);
     xmlhttp.send();
 }

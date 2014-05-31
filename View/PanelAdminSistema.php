@@ -42,7 +42,7 @@
 				</a>
 			 </div>
 			 <ul class="pull-right">
-			 	<a href="CerrarSesion.php">Cerrar Sesión</a>	
+			 	<a id="cerrar_sesion" href="CerrarSesion.php">Cerrar Sesión</a>	
 			 </ul>			 
 		</div>
     </div> <!--FIN Container-->
@@ -65,8 +65,8 @@
 					        </select>
 
 					        <select id="empresas">
-							      <?php require '../Controlador/getEmpresa.php';?>
 						  	</select>
+
 					        <a class="btn enviar registrar_usuario">Registrar</a>
 					        <div id="respuesta_usuario"></div>
 				    	</form>

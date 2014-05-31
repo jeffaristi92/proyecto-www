@@ -3,7 +3,9 @@ body{
 	background: #f6f6f6;
 }
 .contenedor_menu{
-	height: 50px;
+	height: 50px;	
+	margin-right: 0px;
+	padding: 0px;
 }
 .menu{
 	position: fixed;
@@ -27,6 +29,11 @@ body{
 	padding-left: 15px;
 	padding-right: 15px;
 }
+.menu #cerrar_sesion{
+	padding-top: 16px;
+	padding-bottom: 18px;
+	background-color: rgb(230, 230, 230);
+}
 .menu .funciones{
 	height: 50px;
 	width: 163px;
@@ -40,7 +47,7 @@ body{
 	background-color: #fff;
 }
 .pull-right {
-	margin: 14px 15px;
+	margin: 14px 0px;
 }
 .pull-right a:hover{
 	color: rgb(22, 29, 34);

@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    cargarEmpresas();//lo primero que hace este archivo es cargar lista empresas
+
 	  /*Funciones para PanelAdminSistema animación anclas <a>*/
 	  $('.a_empresa').click(function(){
 										   
@@ -38,6 +40,8 @@ function registrarEmpresa() {
   	xmlhttp.onreadystatechange=function() {
   		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
     		document.getElementById("respuesta_empresa").innerHTML=xmlhttp.responseText;
+        //cada vez que se registre una nueva empresa volvemos a cargar la lista de empresas registradas
+        cargarEmpresas();
     	}
   	}
 
@@ -49,4 +53,17 @@ function registrarEmpresa() {
 
   	xmlhttp.open("GET","../Controlador/ControllerEmpresa.php?titulo="+titulo+"&logo="+logo+"&url="+url+"&direccion="+direccion+"&telefono="+telefono,true);
   	xmlhttp.send();
+}
+
+function cargarEmpresas(){
+
+  var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("empresas").innerHTML=xmlhttp.responseText;
+      }
+    }
+
+    xmlhttp.open("GET","../Controlador/getEmpresa.php",true);
+    xmlhttp.send();
 }

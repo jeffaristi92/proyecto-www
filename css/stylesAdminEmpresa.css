@@ -1,7 +1,26 @@
 .contenedor_contenido .wrapper {
 	height: 520px;
+	margin-bottom: 20px;
 }
 
 .menu .funciones {
 	padding: 6px 8px;
+}
+
+.desactivar_plato .wrapper h5{
+	display: inline-block;
+}
+.desactivar_plato span{
+	font-size: 17px;
+}
+
+#no_active{
+	margin-left: 49%;
+}
+
+/*plato activos o no activos*/
+.titulos{
+	width: 80%;
+	margin-left: 20%;
+	margin-top: 25px;
 }

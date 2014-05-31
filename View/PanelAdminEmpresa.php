@@ -22,29 +22,30 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">    
     <link href="../css/stylesAdminSistema.css" rel="stylesheet">  
     <link href="../css/stylesAdminEmpresa.css" rel="stylesheet">  
+    <link href="../css/multi-select.css"       rel="stylesheet">
     <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="../js/scriptsAdminEmpresa.js"></script>  
+    <script type="text/javascript" src="../js/jquery.multi-select.js"></script>
    
   </head>
 
   <body>  
 
-    <div class="container contenedor_menu">
-    
-    <div class="menu">
-       <h1>Bienvenido <?php echo $_SESSION['usuario']?>!</h1>
-       <div class="funciones">
-        <a class="a_plato" href="#" data-toggle="tooltip" data-placement="bottom" title="Plato">
-          <img src="../img/plato.png"/>
-        </a>
-        <a class="a_adicional" href="#" data-toggle="tooltip" data-placement="bottom" title="Adicional"> 
-          <img src="../img/adicional.png"/>
-        </a>
-       </div>
-       <ul class="pull-right">
-        <a href="CerrarSesion.php">Cerrar Sesión</a>  
-       </ul>       
-    </div>
+    <div class="container contenedor_menu">    
+      <div class="menu">
+         <h1>Bienvenido <?php echo $_SESSION['usuario']?>!</h1>
+         <div class="funciones">
+          <a class="a_plato" href="#" data-toggle="tooltip" data-placement="bottom" title="Plato">
+            <img src="../img/plato.png"/>
+          </a>
+          <a class="a_adicional" href="#" data-toggle="tooltip" data-placement="bottom" title="Adicional"> 
+            <img src="../img/adicional.png"/>
+          </a>
+         </div>
+         <ul class="pull-right">
+          <a id="cerrar_sesion" href="CerrarSesion.php">Cerrar Sesión</a>  
+         </ul>       
+      </div>
     </div> <!--FIN Container-->
 
     <div class="container contenedor_contenido">
@@ -84,9 +85,27 @@
               </form>
           </div>
         </div><!--adicional-->
+
+        <div class="col-md-6 desactivar_plato">
+          <div class="wrapper">
+            <h3>Desactivar Platos</h3>
+            <div class="titulos">
+              <h5><b>Activos</b></h5> 
+              <h5 id="no_active"><b>No Activos</b></h5> 
+            </div>
+              <select class="activos" id="platos" multiple="multiple">
+                <script>
+                  listarPlatos();
+                </script>
+              </select>
+
+          </div>
+        </div><!--desactivar_plato-->
+
       </div><!--FIN row-->
     </div> <!--FIN Container-->
-
+    
+    
     <script>
       $( ".registrar_adicional" ).click(function() {
         registrarAdicional();

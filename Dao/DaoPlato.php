@@ -25,6 +25,26 @@
 
 			$this->conexionBd->desconectar($conexion);			
 		}
+
+		public function consultarPlatos(){			
+			
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("SELECT idPlato, nombre FROM Plato")){
+				        		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($id, $value);
+	       		$items = array();
+	       			       		
+	       		while ($stmt->fetch()) {
+	       			
+	       			echo '<option value="'.$id.'">'.$value.'</option>';		
+    			}
+	        }
+
+			$this->conexionBd->desconectar($conexion);				
+		}//fin método consultarPlatos
 		
 	}
 ?>
