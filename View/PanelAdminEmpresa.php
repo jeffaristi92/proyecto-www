@@ -93,13 +93,17 @@
               <h5><b>Activos</b></h5> 
               <h5 id="no_active"><b>No Activos</b></h5> 
             </div>
-              <select class="activos" id="platos" multiple="multiple">
+              <select class="activos" id="platos_activos" multiple="multiple">
                 <script>
-                  listarPlatos();
+                  listarPlatosActivos();
                 </script>
               </select>
-
-          </div>
+              <select class="inactivos" id="platos_inactivos" multiple="multiple">
+                <script>
+                  listarPlatosInactivos();
+                </script>
+              </select>
+          </div>          
         </div><!--desactivar_plato-->
 
       </div><!--FIN row-->

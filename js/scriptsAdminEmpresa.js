@@ -11,6 +11,7 @@ $(document).ready(function(){
 			$('html, body').animate({ scrollTop: "0px" }, 900);			   
 		  });
 	    /*Fin*/      
+      
 });
 
 function registrarAdicional() {
@@ -52,26 +53,64 @@ function registrarPlato() {
     xmlhttp.send();
 }
 
-function listarPlatos() {
+function listarPlatosActivos() {
  
   var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-        document.getElementById("platos").innerHTML=xmlhttp.responseText;
-        //$('.activos').multiSelect();
-
-        $('.activos').multiSelect({
-            afterSelect: function(values){
-                alert("Select value: "+values);
-            },
-            afterDeselect: function(values){
-                alert("Deselect value: "+values);
-            }
-        });
-
+        document.getElementById("platos_activos").innerHTML=xmlhttp.responseText;       
       }
     }
 
-    xmlhttp.open("GET","../Controlador/getPlatos.php",true);
+    var valor = 'activos';
+    xmlhttp.open("GET","../Controlador/getPlatos.php?accion="+valor,true);
+    xmlhttp.send();
+}
+
+function listarPlatosInactivos(){
+
+  var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("platos_inactivos").innerHTML=xmlhttp.responseText;       
+      }
+    }
+
+    var valor = 'inactivos';
+    xmlhttp.open("GET","../Controlador/getPlatos.php?accion="+valor,true);
+    xmlhttp.send();
+}
+
+function inactivarPlato(){
+  
+  var id = $( ".activos" ).val();
+
+   var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {          
+          listarPlatosActivos();
+          listarPlatosInactivos();
+      }
+    }
+
+    var valor = 'desactivar';
+    xmlhttp.open("GET","../Controlador/getPlatos.php?accion="+valor+"&id="+id,true);
+    xmlhttp.send();
+}
+
+function activarPlato(){
+  
+  var id = $( ".inactivos" ).val();
+
+   var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {          
+          listarPlatosActivos();
+          listarPlatosInactivos();
+      }
+    }
+
+    var valor = 'activar';
+    xmlhttp.open("GET","../Controlador/getPlatos.php?accion="+valor+"&id="+id,true);
     xmlhttp.send();
 }

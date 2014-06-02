@@ -26,25 +26,64 @@
 			$this->conexionBd->desconectar($conexion);			
 		}
 
-		public function consultarPlatos(){			
+		public function consultarPlatosActivos(){			
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT idPlato, nombre FROM Plato")){
+			if ($stmt = $conexion->prepare("SELECT idPlato, nombre FROM Plato WHERE activo=1")){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
 	        	$stmt->bind_result($id, $value);
 	       		$items = array();
 	       			       		
-	       		while ($stmt->fetch()) {
-	       			
-	       			echo '<option value="'.$id.'">'.$value.'</option>';		
+	       		while ($stmt->fetch()) {	       			
+	       			echo '<option value="'.$id.'" onclick="inactivarPlato()">'.$value.'</option>';		
     			}
+	        }
+			$this->conexionBd->desconectar($conexion);				
+		}//fin método consultarPlatosActivos
+		
+		public function consultarPlatosInactivos(){			
+			
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("SELECT idPlato, nombre FROM Plato WHERE activo=0")){
+				        		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($id, $value);
+	       		$items = array();
+	       			       		
+	       		while ($stmt->fetch()) {	       			
+	       			echo '<option value="'.$id.'" onclick="activarPlato()">'.$value.'</option>';		
+    			}
+	        }
+			$this->conexionBd->desconectar($conexion);				
+		}//fin método consultarPlatosInactivos
+
+		public function desactivarPlato($idPlato){			
+			
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("UPDATE Plato SET activo = 0 WHERE idPlato = $idPlato")){
+				        		
+				$stmt->execute();   
 	        }
 
 			$this->conexionBd->desconectar($conexion);				
-		}//fin método consultarPlatos
-		
+		}//fin método desactivarPlato
+
+		public function activarPlato($idPlato){			
+			
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("UPDATE Plato SET activo = 1 WHERE idPlato = $idPlato")){				        		
+				$stmt->execute();   
+	        }
+
+			$this->conexionBd->desconectar($conexion);				
+		}//fin método activarPlato
+
 	}
 ?>

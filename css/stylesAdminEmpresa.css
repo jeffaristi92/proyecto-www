@@ -14,6 +14,15 @@
 	font-size: 17px;
 }
 
+select.activos, select.inactivos{
+	width: 40%;
+	margin-left: 35px;
+	height: 150px;
+}
+select.activos option{
+	cursor: pointer;
+}
+
 #no_active{
 	margin-left: 49%;
 }
