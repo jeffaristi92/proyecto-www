@@ -37,6 +37,10 @@ function registrarPlato() {
     xmlhttp.onreadystatechange=function() {
       if (xmlhttp.readyState==4 && xmlhttp.status==200) {
         document.getElementById("respuesta_plato").innerHTML=xmlhttp.responseText;
+
+        //luego de registrar un plato lo listamos ya sea en la lista que corresponda(activos o inactivos)
+        listarPlatosActivos();
+        listarPlatosInactivos();
       }
     }
 
