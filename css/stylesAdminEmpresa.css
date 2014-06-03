@@ -31,12 +31,25 @@ select.activos option, select.inactivos option{
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 999px) {
-		
+	select.activos, select.inactivos {
+		width: 80%;
+		margin-left: 31px;
+	}
+	.desactivar_plato .col-md-6{
+		padding: 0;
+	}
 }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {	
-	
+	.adicional .wrapper{
+		height: 360px;
+	}
+	select.activos, select.inactivos {
+		width: 90%;
+		margin-left: 5%;
+		height: 155px;
+	}
 }
  
 /* Landscape phones and down */

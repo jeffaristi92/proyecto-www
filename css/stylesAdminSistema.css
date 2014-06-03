@@ -185,6 +185,9 @@ select {
 	#respuesta_usuario, #respuesta_empresa{
 		margin-top: 5px;
 	}
+	.usuario .wrapper{
+		height: 400px;
+	}
 }
  
 /* Landscape phones and down */
@@ -209,5 +212,8 @@ select {
 	}
 	.form-signin {
 		padding-left: 12px;
+	}
+	.usuario .wrapper{
+		height: 400px;
 	}
 }
