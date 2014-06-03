@@ -13,10 +13,12 @@
  		$idPlato = $_GET['id'];
     	$daoPlato->activarPlato($idPlato);
 
- 	}else if($_GET['accion'] == 'activos' and !$_GET['id']){ 		
-    	$daoPlato->consultarPlatosActivos();
+ 	}else if($_GET['accion'] == 'activos' and @!$_GET['id'] and $_GET['idEmp']){ 		
+ 		$idEmpresa = $_GET['idEmp'];
+    	$daoPlato->consultarPlatosActivos($idEmpresa);
  	}
- 	else if($_GET['accion'] == 'inactivos' and !$_GET['id']){ 		
-    	$daoPlato->consultarPlatosInactivos();
+ 	else if($_GET['accion'] == 'inactivos' and @!$_GET['id'] and $_GET['idEmp']){ 		
+ 		$idEmpresa = $_GET['idEmp'];
+    	$daoPlato->consultarPlatosInactivos($idEmpresa);
  	}
 ?>

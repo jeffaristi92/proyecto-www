@@ -63,7 +63,8 @@ function listarPlatosActivos() {
     }
 
     var valor = 'activos';
-    xmlhttp.open("GET","../Controlador/getPlatos.php?accion="+valor,true);
+    var idEmpresa = document.getElementById("idEmpresa").innerHTML;
+    xmlhttp.open("GET","../Controlador/getPlatos.php?accion="+valor+"&idEmp="+idEmpresa,true);
     xmlhttp.send();
 }
 
@@ -77,7 +78,8 @@ function listarPlatosInactivos(){
     }
 
     var valor = 'inactivos';
-    xmlhttp.open("GET","../Controlador/getPlatos.php?accion="+valor,true);
+    var idEmpresa = document.getElementById("idEmpresa").innerHTML;
+    xmlhttp.open("GET","../Controlador/getPlatos.php?accion="+valor+"&idEmp="+idEmpresa,true);
     xmlhttp.send();
 }
 
