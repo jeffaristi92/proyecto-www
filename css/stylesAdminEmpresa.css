@@ -8,28 +8,38 @@
 }
 
 .desactivar_plato .wrapper h5{
-	display: inline-block;
+	display: block;
+	text-align: center;
 }
 .desactivar_plato span{
 	font-size: 17px;
 }
 
 select.activos, select.inactivos{
-	width: 40%;
+	width: 75%;
 	margin-left: 35px;
-	height: 150px;
+	height: 360px;
 }
-select.activos option{
+select.activos option, select.inactivos option{
 	cursor: pointer;
 }
 
-#no_active{
-	margin-left: 49%;
-}
 
-/*plato activos o no activos*/
-.titulos{
-	width: 80%;
-	margin-left: 20%;
-	margin-top: 25px;
+/* Large desktop */
+@media (min-width: 1200px) {	
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 999px) {
+		
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {	
+	
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {	
+
 }

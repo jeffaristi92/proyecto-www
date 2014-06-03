@@ -22,10 +22,8 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">    
     <link href="../css/stylesAdminSistema.css" rel="stylesheet">  
     <link href="../css/stylesAdminEmpresa.css" rel="stylesheet">  
-    <link href="../css/multi-select.css"       rel="stylesheet">
     <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="../js/scriptsAdminEmpresa.js"></script>  
-    <script type="text/javascript" src="../js/jquery.multi-select.js"></script>
    
   </head>
 
@@ -87,23 +85,29 @@
         </div><!--adicional-->
 
         <div class="col-md-6 desactivar_plato">
-          <div class="wrapper">
-            <h3>Desactivar Platos</h3>
-            <div class="titulos">
-              <h5><b>Activos</b></h5> 
-              <h5 id="no_active"><b>No Activos</b></h5> 
-            </div>
-              <select class="activos" id="platos_activos" multiple="multiple">
-                <script>
-                  listarPlatosActivos();
-                </script>
-              </select>
-              <select class="inactivos" id="platos_inactivos" multiple="multiple">
-                <script>
-                  listarPlatosInactivos();
-                </script>
-              </select>
-          </div>          
+          	<div class="wrapper">
+            	<h3>Desactivar Platos</h3>
+            	<div class="row">
+
+            		<div class="col-md-6">			            
+			            <h5><b>Activos</b></h5> 			            
+		              	<select class="activos" id="platos_activos" multiple="multiple">
+			                <script>
+			                  listarPlatosActivos();
+			                </script>
+		              	</select>
+		            </div>
+
+		            <div class="col-md-6">			            
+				        <h5 id="no_active"><b>No Activos</b></h5> 				            
+		              	<select class="inactivos" id="platos_inactivos" multiple="multiple">
+			                <script>
+			                  listarPlatosInactivos();
+			                </script>
+		              	</select>
+	              	</div>
+	            </div>
+          	</div>          
         </div><!--desactivar_plato-->
 
       </div><!--FIN row-->
