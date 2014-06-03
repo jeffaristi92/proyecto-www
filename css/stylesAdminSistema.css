@@ -123,3 +123,91 @@ select {
 	border-radius: 5px;
 	cursor: pointer;
 }
+
+/* Large desktop */
+@media (min-width: 1200px) {	
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 999px) {
+		
+	.col-md-6 {
+		width: 49%;		
+		float: left;
+	}
+	.form-signin {
+		padding-left: 35px;
+	}
+	.form-control {
+		width: 90%;
+	}
+	select {
+		width: 90%;
+	}
+	.enviar {
+		margin-right: 10%;
+	}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {	
+	.col-md-6{
+		margin-bottom: 20px;
+	}
+	.form-signin {
+		padding-left: 30px;
+	}
+	.form-control {
+		width: 95%;
+	}
+	select {
+		width: 95%;
+	}
+	.enviar{
+		float: none;
+		margin-right: 0;
+		width: 95%;
+	}
+	.menu .funciones {
+		width: 117px;
+		margin-left: 7%;
+	}
+	.menu .pull-right a {
+		padding-left: 6px;
+		padding-right: 6px;
+	}
+	.pull-right {
+		padding-left: 0;
+	}
+	.contenedor_contenido .wrapper h3 {
+		text-align: center;
+	}
+	#respuesta_usuario, #respuesta_empresa{
+		margin-top: 5px;
+	}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {	
+	.menu{
+		height: 98px;
+	}
+	.contenedor_contenido {
+		margin-top: 80px;
+	}
+	.menu h1 {
+		float: none;
+		text-align: center;
+	}
+	.menu .pull-right a {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.menu .funciones {
+		width: 50%;
+		margin-left: 0;
+	}
+	.form-signin {
+		padding-left: 12px;
+	}
+}
