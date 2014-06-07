@@ -10,7 +10,7 @@
 		}
 		
 		public function insertarPedido($fecha,$estado,$tipoPago,$idCajero){
-			$UPedido = new Pedido(0,$fecha,$estado,$tipoPago,$idCajero);			
+			$Pedido = new Pedido(0,$fecha,$estado,$tipoPago,$idCajero);			
 			$this->daoPedido->insertarPedido($Pedido);
 		}
 	}
