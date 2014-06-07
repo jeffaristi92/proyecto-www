@@ -43,7 +43,23 @@
 	        }
 			$this->conexionBd->desconectar($conexion);				
 		}//fin método consultarPlatosActivos
-		
+		public function consultarPlatos(){			
+			
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("SELECT idPlato, nombre FROM Plato WHERE activo=1")){
+				        		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($id, $value);
+	       		$items = array();	       		
+	       		while ($stmt->fetch()) {	       			
+						echo '<option value="'.$id.'">'.$value.'</option>';	
+    			}	        	
+	        }
+
+			$this->conexionBd->desconectar($conexion);				
+		}
 		public function consultarPlatosInactivos($idEmpresa){			
 			
 			$conexion = $this->conexionBd->conectar();
@@ -61,6 +77,7 @@
 	        }
 			$this->conexionBd->desconectar($conexion);				
 		}//fin método consultarPlatosInactivos
+
 
 		public function desactivarPlato($idPlato){			
 			

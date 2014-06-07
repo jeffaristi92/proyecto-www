@@ -25,6 +25,26 @@
 
 			$this->conexionBd->desconectar($conexion);			
 		}
+
+		public function consultarAdicionales(){			
+			
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("SELECT idAdicional, nombre FROM Adicional")){
+				        		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($id, $value);
+	       		$items = array();	       		
+	       		while ($stmt->fetch()) {	       			
+						echo '<option value="'.$id.'">'.$value.'</option>';	
+    			}	        	
+	        }
+
+			$this->conexionBd->desconectar($conexion);				
+		}
+
+
 		
 	}
 ?>
