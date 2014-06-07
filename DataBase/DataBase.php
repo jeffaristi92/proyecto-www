@@ -3,9 +3,9 @@
 	class DataBase{
 	
 		private $servidor = 'localhost';		
-		private $dbName = 'www';
+		private $dbName = 'bd_www';
 		private $user = 'root';		
-		private $password = 'john123';
+		private $password = 'root';
 		private $mysqli;
 		
 	    public function conectar() {

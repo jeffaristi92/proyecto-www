@@ -35,7 +35,7 @@
 		}
 		
 		public function getEstado(){
-			$this->estado = $estado;
+			return $this->estado;
 		}
 		
 		public function setTipoPago($tipoPago){
