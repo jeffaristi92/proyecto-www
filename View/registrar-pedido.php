@@ -24,14 +24,14 @@
         <h2 class="form-signin-heading">Registro Pedido</h2>        
         <input name="fecha" type="date" class="form-control" required autofocus>
         <select name="estado" class="form-control" required autofocus>
-            <option value="va">En Proceso</option>
-            <option value="Si">Realizado</option>
-            <option value="no">Cancelado</option>
+            <option value="En Proceso">En Proceso</option>
+            <option value="Realizado">Realizado</option>
+            <option value="Cancelado">Cancelado</option>
         </select>
         <select name="tipoPago" class="form-control" required autofocus>
-            <option value="va">Credito</option>
-            <option value="Si">Debito</option>
-            <option value="no">Efectivo</option>
+            <option value="Credito">Credito</option>
+            <option value="Debito">Debito</option>
+            <option value="Efectivo">Efectivo</option>
         </select>
         <input name="idCajero" type="string" class="form-control" placeholder="idCajero" required autofocus>
         <select id="platos">
@@ -45,8 +45,8 @@
             <select class="activos" id="platos_activos" multiple="multiple">
                 
                   <option value='opcion1' >opcion1</option>
-                  <option value='opcion1' >opcion2</option>
-                  <option value='opcion1' >opcion3</option>
+                  <option value='opcion2' >opcion2</option>
+                  <option value='opcion3' >opcion3</option>
                 
             </select>
         </div>
