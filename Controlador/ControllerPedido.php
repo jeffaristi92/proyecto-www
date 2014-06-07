@@ -9,7 +9,6 @@ require 'ControladorPedido.php';
         @$tipoPago = $_GET['tipoPago'];
         @$idCajero = $_GET['idCajero'];
 
-
       	$controlador = new ControladorPedido();
       	$controlador->insertarPedido($fecha,$estado,$tipoPago,$idCajero);
     //}

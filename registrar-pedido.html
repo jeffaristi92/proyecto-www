@@ -17,18 +17,18 @@
 
     <div class="container">
 
-      <form class="form-signin" role="form" action="controlador/ControllerPedido.php" method="POST">
+      <form class="form-signin" role="form" action="controlador/ControllerPedido.php" method="GET">
         <h2 class="form-signin-heading">Registro Pedido</h2>        
         <input name="fecha" type="date" class="form-control" required autofocus>
         <select name="estado" class="form-control" required autofocus>
-            <option value="va">En Proceso</option>
-            <option value="Si">Realizado</option>
-            <option value="no">Cancelado</option>
+            <option value="En Proceso">En Proceso</option>
+            <option value="Realizado">Realizado</option>
+            <option value="Cancelado">Cancelado</option>
         </select>
         <select name="tipoPago" class="form-control" required autofocus>
-            <option value="va">Credito</option>
-            <option value="Si">Debito</option>
-            <option value="no">Efectivo</option>
+            <option value="Credito">Credito</option>
+  			<option value="Debito">Debito</option>
+  			<option value="Efectivo">Efectivo</option>
         </select>
         <input name="idCajero" type="string" class="form-control" placeholder="idCajero" required autofocus>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>

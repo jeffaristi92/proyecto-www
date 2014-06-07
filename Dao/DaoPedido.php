@@ -15,11 +15,11 @@
 			$conexion = $this->conexionBd->conectar();
 
 			if ($stmt = $conexion->prepare("INSERT INTO `Pedido`(`fecha`,`estado`,`tipoPago`,`idCajero`) VALUES (?,?,?,?)")){
-	        
+	            
 		        $stmt->bind_param('ssss',$pedido->getFecha(),$pedido->getEstado(),$pedido->getTipoPago(),$pedido->getIdCajero());  
 		        $stmt->execute();   
 		        $stmt->store_result();
-				echo "*Pedido registrado con éxito";//mensaje para mostrar al usuario
+				echo "*Pedido registrado con exito";//mensaje para mostrar al usuario
 	        	
 	        }//Fin consulta
 
