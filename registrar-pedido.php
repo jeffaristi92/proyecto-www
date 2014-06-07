@@ -10,6 +10,7 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">    
     <link href="css/signin.css" rel="stylesheet">
+    <script src="js/scriptsPedido.js" type="text/javascript"></script> 
    
   </head>
 
@@ -31,8 +32,16 @@
   			<option value="Efectivo">Efectivo</option>
         </select>
         <input name="idCajero" type="string" class="form-control" placeholder="idCajero" required autofocus>
+        <select name="plato" id="plato" class="form-control" required autofocus>
+        	<option value="1">1</option>
+  			<option value="2">2</option>
+  			<option value="3">3</option>
+        </select>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>
       </form>
+      
+      <ul id="listaPlatos">
+      </ul>
 
     </div> 
   </body>
