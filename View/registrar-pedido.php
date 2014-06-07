@@ -14,13 +14,14 @@
     <link href="../css/styles.css" rel="stylesheet">
     <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="../js/scripts.js"></script>
-   
+    <script type="text/javascript" src="../js/scriptsPedido.js"></script>
   </head>
 
   <body> 	
 
     <div class="container">
         <form class="form-signin" role="form" action="../controlador/ControllerPedido.php" method="POST">
+        <table>
         <h2 class="form-signin-heading">Registro Pedido</h2>        
         <input name="fecha" type="date" class="form-control" required autofocus>
         <select name="estado" class="form-control" required autofocus>
@@ -34,24 +35,22 @@
             <option value="Efectivo">Efectivo</option>
         </select>
         <input name="idCajero" type="string" class="form-control" placeholder="idCajero" required autofocus>
+        </table>
+        <table>
         <select id="platos">
               <?php require '../Controlador/getPlato.php';?>
         </select>
+        <input type="button" value="Agregar plato" onClick="agregarPlato()"  tabindex="15"/>
+        <select id="listaPlatos" multiple="multiple">
+        </select>
+        </table>
+        <table>
         <select id="adicionales">
               <?php require '../Controlador/getAdicional.php';?>
         </select>
-        <div class="col-md-6">                     
-            <h5><b>Activos</b></h5>                         
-            <select class="activos" id="platos_activos" multiple="multiple">
-                
-                  <option value='opcion1' >opcion1</option>
-                  <option value='opcion2' >opcion2</option>
-                  <option value='opcion3' >opcion3</option>
-                
-            </select>
-        </div>
-
-
+        <select id="listaAdicionales" multiple="multiple">
+        </select>
+        </table>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>
       </form>
