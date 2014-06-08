@@ -20,9 +20,6 @@ select.activos, select.inactivos{
 	margin-left: 35px;
 	height: 360px;
 }
-select.activos option, select.inactivos option{
-	cursor: pointer;
-}
 
 
 /* Large desktop */

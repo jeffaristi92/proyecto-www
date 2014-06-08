@@ -4,11 +4,13 @@
 		private $nombre;
 		private $ingredientes;
 		private $precio;
+		private $idEmpresa;
 		
-		public function __construct($nombre, $ingredientes, $precio){ 	 		
+		public function __construct($nombre, $ingredientes, $precio, $idEmpresa){ 	 		
  	 		$this->nombre = $nombre;
  	 		$this->ingredientes = $ingredientes;
  	 		$this->precio = $precio;
+ 	 		$this->idEmpresa = $idEmpresa;
 		}
 		
 		public function setIdAdicional($id){
@@ -38,6 +40,13 @@
 		}
 		public function getPrecio(){
 			return $this->precio;	
+		}
+
+		public function setIdEmpresa($idEmpresa){
+			$this->idEmpresa = $idEmpresa;	
+		}
+		public function getIdEmpresa(){
+			return $this->idEmpresa;	
 		}
 	}
 ?>

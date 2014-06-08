@@ -14,9 +14,12 @@
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("INSERT INTO `Adicional`(`Nombre`, `ingredientes`, `precio`) VALUES (?,?,?)")){
+			if ($stmt = $conexion->prepare(
+				"INSERT INTO `Adicional`(`Nombre`, `ingredientes`, `precio`, `idEmpresa`) VALUES (?,?,?,?)"))
+			{
 	        
-		        $stmt->bind_param('ssd',$adicional->getNombre(),$adicional->getIngredientes(),$adicional->getPrecio());  
+		        $stmt->bind_param('ssdd',$adicional->getNombre(),$adicional->getIngredientes(),$adicional->getPrecio(),
+		        	              $adicional->getIdEmpresa());  
 		        $stmt->execute();   
 		        $stmt->store_result();
 				echo "*Adicional registrado con éxito";//mensaje para mostrar al usuario

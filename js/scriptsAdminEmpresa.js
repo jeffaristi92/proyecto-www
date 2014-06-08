@@ -26,8 +26,9 @@ function registrarAdicional() {
   var nombre = $("#nombre_a").val();
 	var ingredientes = $("#ingredientes_a").val();
 	var precio = $("#precio_a").val();
+  var idEmpresa = document.getElementById("idEmpresa").innerHTML;
 
-    xmlhttp.open("GET","../Controlador/ControllerAdicional.php?nombre="+nombre+"&ingredientes="+ingredientes+"&precio="+precio,true);
+    xmlhttp.open("GET","../Controlador/ControllerAdicional.php?nombre="+nombre+"&ingredientes="+ingredientes+"&precio="+precio+"&idEmpresa="+idEmpresa,true);
     xmlhttp.send();
 }
 
