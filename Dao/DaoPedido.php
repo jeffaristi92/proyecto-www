@@ -2,6 +2,8 @@
 
 	require_once ('../DataBase/DataBase.php');
 	require_once ('../Logico/Pedido.php');
+	require_once ('../Logico/PlatoPedido.php');
+	require_once ('../Logico/AdicionalPedido.php');
 	
 	class DaoPedido {
 		private $conexionBd;
@@ -31,10 +33,10 @@
 			$conexion = $this->conexionBd->conectar();
 			if ($stmt = $conexion->prepare("INSERT INTO `plato_pedido`(`idPlato`, `idPedido`, `cantidad`) VALUES (?,(SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'bd_www' AND TABLE_NAME = 'pedido')-1,?)")){
 	            
-		        $stmt->bind_param('ii',$pedido->getFecha(),$pedido->getEstado(),$pedido->getTipoPago(),$pedido->getIdCajero());  
+		        $stmt->bind_param('ii',$platoPedido->getIdPlato(),$platoPedido->getCantidad());  
 		        $stmt->execute();   
 		        $stmt->store_result();
-				echo "*Pedido registrado con exito";//mensaje para mostrar al usuario
+				echo "*Plato Pedido registrado con exito";//mensaje para mostrar al usuario
 	        	
 	        }//Fin consulta
 
@@ -45,12 +47,12 @@
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("INSERT INTO `plato_pedido`(`idAdicional`, `idPedido`, `cantidad`) VALUES (?,(SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'bd_www' AND TABLE_NAME = 'pedido')-1,?)")){
+			if ($stmt = $conexion->prepare("INSERT INTO `adicional_pedido`(`idAdicional`, `idPedido`, `cantidad`) VALUES (?,(SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'bd_www' AND TABLE_NAME = 'pedido')-1,?)")){
 	            
-		        $stmt->bind_param('ii',$pedido->getFecha(),$pedido->getEstado(),$pedido->getTipoPago(),$pedido->getIdCajero());  
+		        $stmt->bind_param('ii',$adicionalPedido->getIdAdicional(),$adicionalPedido->getCantidad());  
 		        $stmt->execute();   
 		        $stmt->store_result();
-				echo "*Pedido registrado con exito";//mensaje para mostrar al usuario
+				echo "*Adicional Pedido registrado con exito";//mensaje para mostrar al usuario
 	        	
 	        }//Fin consulta
 

@@ -14,7 +14,7 @@
 			$this->idPlato = $id;
 		}
 		public function getIdPLato(){
-			return $this->idAPlato;
+			return $this->idPlato;
 		}
 		public function setIdPedido($idPedido){
 			$this->idPedido = $idPedido;

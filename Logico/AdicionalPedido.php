@@ -1,5 +1,5 @@
 <?php
-	class Pedido {
+	class AdicionalPedido {
 		private $idAdicional;
 		private $idPedido;
 		private $cantidad;

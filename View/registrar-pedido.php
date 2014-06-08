@@ -18,9 +18,9 @@
   </head>
 
   <body> 	
-
+	<script> var total=0; </script>
     <div class="container">
-        <form class="form-signin" role="form" action="../controlador/ControllerPedido.php" method="POST">
+        <form class="form-signin" role="form" action="../controlador/ControllerPedido.php" method="GET">
         <table>
         <h2 class="form-signin-heading">Registro Pedido</h2>        
         <input name="fecha" type="date" class="form-control" required autofocus>
@@ -40,21 +40,25 @@
         <select id="platos">
               <?php require '../Controlador/getPlato.php';?>
         </select>
+        <input name="cantidadPlato" type="text" id="cantidadPlato" tabindex="14"/>
         <input type="button" value="Agregar plato" onClick="agregarPlato()"  tabindex="15"/>
-        <select id="listaPlatos" multiple="multiple">
+        <select id="listaPlatos" name="listaPlatos[]" multiple="multiple">
         </select>
         </table>
         <table>
         <select id="adicionales">
               <?php require '../Controlador/getAdicional.php';?>
         </select>
-        <select id="listaAdicionales" multiple="multiple">
+        <input name="cantidadAdicional" type="text" id="cantidadAdicional" tabindex="14"/>
+        <input type="button" value="Agregar Adicional" onClick="agregarAdicional()"  tabindex="15"/>
+        <select id="listaAdicionales" name="listaAdicionales[]" multiple="multiple">
         </select>
         </table>
-
+		
         <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>
       </form>
-
+      <table id="precioTotal"></table>
+		
     </div> 
   </body>
 </html>

@@ -30,14 +30,14 @@
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT idAdicional, nombre FROM Adicional")){
+			if ($stmt = $conexion->prepare("SELECT idAdicional, nombre, precio FROM Adicional")){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
-	        	$stmt->bind_result($id, $value);
+	        	$stmt->bind_result($id, $value, $precio);
 	       		$items = array();	       		
 	       		while ($stmt->fetch()) {	       			
-						echo '<option value="'.$id.'">'.$value.'</option>';	
+						echo '<option value="'.$id."-".$precio.'">'.$value.'</option>';	
     			}	        	
 	        }
 

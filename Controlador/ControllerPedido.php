@@ -8,8 +8,24 @@ require 'ControladorPedido.php';
     	@$estado = $_GET['estado'];
         @$tipoPago = $_GET['tipoPago'];
         @$idCajero = $_GET['idCajero'];
-
+		@$listaPlatos = $_GET["listaPlatos"];
+		@$listaAdicionales = $_GET["listaAdicionales"];
+		
+		/*
+		for ($i=0;$i<count($listaPlatos);$i++){     
+			echo "<br> Plato " . $i . ": " . $listaPlatos[$i];    
+		} 
+		*/
       	$controlador = new ControladorPedido();
       	$controlador->insertarPedido($fecha,$estado,$tipoPago,$idCajero);
+		for ($i=0;$i<count($listaPlatos);$i++){
+			$valores = split("-",$listaPlatos[$i]);
+			$controlador->insertarPlatoPedido($valores[0],$valores[1]);
+		}
+		for ($i=0;$i<count($listaAdicionales);$i++){
+			$valores = split("-",$listaAdicionales[$i]);     
+			$controlador->insertarAdicionalPedido($valores[0],$valores[1]);
+		}
+		
     //}
 ?>

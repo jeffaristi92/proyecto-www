@@ -47,14 +47,14 @@
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT idPlato, nombre FROM Plato WHERE activo=1")){
+			if ($stmt = $conexion->prepare("SELECT idPlato, nombre, precio FROM Plato WHERE activo=1")){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
-	        	$stmt->bind_result($id, $value);
+	        	$stmt->bind_result($id, $value, $precio);
 	       		$items = array();	       		
 	       		while ($stmt->fetch()) {	       			
-						echo '<option value="'.$id.'">'.$value.'</option>';	
+						echo '<option value="'.$id."-".$precio.'">'.$value.'</option>';	
     			}	        	
 	        }
 
