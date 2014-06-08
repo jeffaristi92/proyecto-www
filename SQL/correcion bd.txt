@@ -1,6 +1,0 @@
-alter table Adicional add column `idEmpresa` int NOT NULL;
-
-alter table Adicional add CONSTRAINT `fk_adicional_Empresa` FOREIGN KEY (`idEmpresa`) 
-REFERENCES `Empresa` (`idEmpresa`);
-
-drop table adicional_plato;

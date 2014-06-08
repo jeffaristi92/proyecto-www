@@ -5,13 +5,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 USE `mydb` ;
 
--- -----------------------------------------------------
--- Table `mydb`.`table1`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `mydb`.`table1` (
-)
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Empresa`
@@ -70,35 +63,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`Adicional`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `mydb`.`Adicional` (
-  `idAdicional` INT NOT NULL AUTO_INCREMENT ,
-  `Nombre` VARCHAR(100) NOT NULL ,
-  `ingredientes` VARCHAR(500) NULL ,
-  `precio` DOUBLE NOT NULL ,
-  PRIMARY KEY (`idAdicional`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`Adicional_Plato`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `mydb`.`Adicional_Plato` (
-  `idPlato` INT NOT NULL ,
-  `idAdicional` INT NOT NULL ,
-  PRIMARY KEY (`idPlato`, `idAdicional`) ,
-  INDEX `adicionalP_Plato_idx` (`idPlato` ASC) ,
-  INDEX `adicionalP_Adicional_idx` (`idAdicional` ASC) ,
-  CONSTRAINT `adicionalP_Plato`
-    FOREIGN KEY (`idPlato` )
-    REFERENCES `mydb`.`Plato` (`idPlato` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `adicionalP_Adicional`
-    FOREIGN KEY (`idAdicional` )
-    REFERENCES `mydb`.`Adicional` (`idAdicional` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `Adicional` (
+  `idAdicional` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(100) NOT NULL,
+  `ingredientes` varchar(500) DEFAULT NULL,
+  `precio` double NOT NULL,
+  `idEmpresa` int(11) NOT NULL,
+  PRIMARY KEY (`idAdicional`),
+  UNIQUE KEY `Nombre` (`Nombre`),
+  KEY `fk_adicional_Empresa` (`idEmpresa`)
+) ENGINE=InnoDB;
 
 
 -- -----------------------------------------------------
