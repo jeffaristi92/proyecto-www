@@ -22,8 +22,10 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">    
     <link href="../css/stylesAdminSistema.css" rel="stylesheet">  
     <link href="../css/stylesAdminEmpresa.css" rel="stylesheet">  
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="../js/scriptsAdminEmpresa.js"></script>  
+    <script type="text/javascript" src="../js/scriptsAdminEmpresa.js"></script> 
+    <script type="text/javascript" src="../js/script_reportes.js"></script> 
    
   </head>
 
@@ -99,20 +101,35 @@
 		            </div>
 
 		            <div class="col-md-6">			            
-				        <h5 id="no_active"><b>No Activos</b></h5> 				            
+				            <h5 id="no_active"><b>No Activos</b></h5> 				            
 		              	<select class="inactivos" id="platos_inactivos" multiple="multiple">
 			                <script>
 			                  listarPlatosInactivos();
 			                </script>
 		              	</select>
-	              	</div>
+	              </div>
 	            </div>
           	</div>          
         </div><!--desactivar_plato-->
 
+        <div class="col-md-6 ventas_total">
+            <div class="wrapper">
+              <h3>Ventas Totales</h3>
+
+              <div class="row">       
+                <div class="col-md-12">                           
+                   <div id="dashboard">
+                      <div id="control1"></div>                    
+                      <div id="chart1"></div>
+                      <div id="chart2"></div>
+                  </div>               
+                </div>               
+              </div>
+            </div>          
+        </div><!--desactivar_plato-->
+
       </div><!--FIN row-->
     </div> <!--FIN Container-->
-    
     
     <script>
       $( ".registrar_adicional" ).click(function() {

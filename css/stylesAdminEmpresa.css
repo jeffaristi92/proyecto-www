@@ -21,6 +21,20 @@ select.activos, select.inactivos{
 	height: 360px;
 }
 
+#dashboard #control1{
+	text-align: center;
+	margin-bottom: 42px;
+}
+#chart1, #chart2{
+	float: left;
+	margin-left: 20px;
+} 
+#chart1{
+	width: 218px;
+	height: 234px;
+	
+}
+
 
 /* Large desktop */
 @media (min-width: 1200px) {	
