@@ -2,10 +2,12 @@
 google.load('visualization', '1.1', {packages: ['controls']});
 google.setOnLoadCallback(drawVisualization);
 
+var nombre = 'nombre';
+
 function drawVisualization() {
         // Prepare the data
         var data = google.visualization.arrayToDataTable([
-          ['Name', 'Gender', 'Age', 'Donuts eaten'],
+          [nombre, 'Gender', 'Age', 'Donuts eaten'],
           ['Michael' , 'Male', 12, 5],
           ['Elisa', 'Female', 20, 7],
           ['Robert', 'Male', 7, 3],

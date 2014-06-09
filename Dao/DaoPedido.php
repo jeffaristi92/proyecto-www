@@ -31,7 +31,7 @@
 		public function insertarPlatoPedido($platoPedido){			
 			
 			$conexion = $this->conexionBd->conectar();
-			if ($stmt = $conexion->prepare("INSERT INTO `plato_pedido`(`idPlato`, `idPedido`, `cantidad`) VALUES (?,(SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'bd_www' AND TABLE_NAME = 'pedido')-1,?)")){
+			if ($stmt = $conexion->prepare("INSERT INTO `Plato_Pedido`(`idPlato`, `idPedido`, `cantidad`) VALUES (?,(SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'bd_www' AND TABLE_NAME = 'pedido')-1,?)")){
 	            
 		        $stmt->bind_param('ii',$platoPedido->getIdPlato(),$platoPedido->getCantidad());  
 		        $stmt->execute();   
@@ -47,7 +47,7 @@
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("INSERT INTO `adicional_pedido`(`idAdicional`, `idPedido`, `cantidad`) VALUES (?,(SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'bd_www' AND TABLE_NAME = 'pedido')-1,?)")){
+			if ($stmt = $conexion->prepare("INSERT INTO `Adicional_Pedido`(`idAdicional`, `idPedido`, `cantidad`) VALUES (?,(SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'bd_www' AND TABLE_NAME = 'pedido')-1,?)")){
 	            
 		        $stmt->bind_param('ii',$adicionalPedido->getIdAdicional(),$adicionalPedido->getCantidad());  
 		        $stmt->execute();   

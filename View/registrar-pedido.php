@@ -20,7 +20,7 @@
   <body> 	
 	<script> var total=0; </script>
     <div class="container">
-        <form class="form-signin" role="form" action="../controlador/ControllerPedido.php" method="GET">
+        <form class="form-signin" role="form" action="../Controlador/ControllerPedido.php" method="GET">
         <table>
         <h2 class="form-signin-heading">Registro Pedido</h2>        
         <input name="fecha" type="date" class="form-control" required autofocus>

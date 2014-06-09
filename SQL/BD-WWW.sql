@@ -88,7 +88,7 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`Pedido` (
   INDEX `pedido_usuario_idx` (`idCajero` ASC) ,
   CONSTRAINT `pedido_usuario`
     FOREIGN KEY (`idCajero` )
-    REFERENCES `mydb`.`Usuario` (`usuario` )
+    REFERENCES `mydb`.`Usuario` (`usuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
