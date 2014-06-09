@@ -1,13 +1,13 @@
 <?php
 	
 require 'ControladorPedido.php';
-	
+	session_start();
     //if($_GET['fecha'] && $_GET['estado'] && $_GET['tipoPago'] && $_GET['idCajero']){
 
     	@$fecha = $_GET['fecha'];
     	@$estado = $_GET['estado'];
         @$tipoPago = $_GET['tipoPago'];
-        @$idCajero = $_GET['idCajero'];
+        @$idCajero = $_SESSION['usuario'];
 		@$listaPlatos = $_GET["listaPlatos"];
 		@$listaAdicionales = $_GET["listaAdicionales"];
 		
@@ -26,6 +26,8 @@ require 'ControladorPedido.php';
 			$valores = split("-",$listaAdicionales[$i]);     
 			$controlador->insertarAdicionalPedido($valores[0],$valores[1]);
 		}
+		
+		header('Location: ../View/PanelCajero.php');
 		
     //}
 ?>
