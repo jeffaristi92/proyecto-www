@@ -24,7 +24,7 @@
 			$this->idPlato = $id;
 		}
 		public function getIdPLato(){
-			return $this->idAPlato;
+			return $this->idPlato;
 		}
 		
 		public function setNombre($nombre){
