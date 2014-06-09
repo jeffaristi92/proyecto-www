@@ -2,28 +2,24 @@
 google.load('visualization', '1.1', {packages: ['controls']});
 google.setOnLoadCallback(drawVisualization);
 
-var nombre = 'nombre';
+
+var arreglo = new Array();
+arreglo[0] = new Array ('Nombre', 'Edad', 'Donuts Comidas');
+arreglo[1] = new Array('Michael', 12, 5);
+arreglo[2] = new Array('Elisa', 20, 7);
+arreglo[3] = new Array('John', 23, 10);
+
 
 function drawVisualization() {
-        // Prepare the data
-        var data = google.visualization.arrayToDataTable([
-          [nombre, 'Gender', 'Age', 'Donuts eaten'],
-          ['Michael' , 'Male', 12, 5],
-          ['Elisa', 'Female', 20, 7],
-          ['Robert', 'Male', 7, 3],
-          ['John', 'Male', 54, 2],
-          ['Jessica', 'Female', 22, 6],
-          ['Aaron', 'Male', 3, 1],
-          ['Margareth', 'Female', 42, 8],
-          ['Miranda', 'Female', 33, 6]
-        ]);
+        
+        var data = google.visualization.arrayToDataTable(arreglo);
       
         // Define a slider control for the Age column.
         var slider = new google.visualization.ControlWrapper({
           'controlType': 'NumberRangeFilter',
           'containerId': 'control1',
           'options': {
-            'filterColumnLabel': 'Age',
+            'filterColumnLabel': 'Edad',
             'ui': {'labelStacking': 'vertical'}
           }
         });
@@ -56,7 +52,7 @@ function drawVisualization() {
           },
           // Instruct the piechart to use colums 0 (Name) and 3 (Donuts Eaten)
           // from the 'data' DataTable.
-          'view': {'columns': [0, 3]}
+          'view': {'columns': [0, 2]}
         });
       
         // Define a table
