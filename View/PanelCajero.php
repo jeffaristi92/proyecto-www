@@ -46,13 +46,13 @@
 
                <form class="form-signin" role="form" action="../Controlador/ControllerPedido.php" method="GET">
                     
-                    <input name="fecha" type="date" class="form-control" required autofocus>
-                    <select name="estado" class="form-control" required autofocus>
+                    <input id="fecha" type="date" class="form-control" autofocus>
+                    <select id="estado" class="form-control" autofocus>
                         <option value="En Proceso">En Proceso</option>
                         <option value="Realizado">Realizado</option>
                         <option value="Cancelado">Cancelado</option>
                     </select>
-                    <select name="tipoPago" class="form-control" required autofocus>
+                    <select id="tipoPago" class="form-control" autofocus>
                         <option value="Credito">Credito</option>
                         <option value="Debito">Debito</option>
                         <option value="Efectivo">Efectivo</option>
@@ -75,13 +75,19 @@
                     </select>                    
 
                     <a class="btn enviar registrar_pedido">Registrar</a>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>
+                    <div id="respuesta_pedido"></div>
                 </form>
                 <table id="precioTotal"></table>
           </div>
         </div><!--plato-->
       </div><!--FIN row-->
     </div><!--FIN Container-->
+    
+     <script>
+      $( ".registrar_pedido" ).click(function() {
+        registrarPedido();
+      });
+    </script>
 
   </body>
 </html>

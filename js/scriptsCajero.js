@@ -57,3 +57,26 @@ function removerPlato(){
 	plato.parentNode.removeChild(plato);
 	//lista.removeChild(plato);
 }
+
+function registrarPedido() {
+ 
+  var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("respuesta_pedido").innerHTML=xmlhttp.responseText;
+      }
+    }
+
+  var fecha = $("#fecha").val();
+  var estado = $("#estado").val();
+  var tipoPago = $("#tipoPago").val();
+  var listaPlatos = $("#listaPlatos option:selected").text();
+  var listaAdicionales = $("#listaAdicionales  option:selected").text();
+  
+  alert(listaPlatos);
+   //@$listaPlatos = $_GET["listaPlatos"];
+   //@$listaAdicionales = $_GET["listaAdicionales"];
+
+    xmlhttp.open("GET","../Controlador/ControllerPedido.php?fecha="+fecha+"&estado="+estado+"&tipoPago="+tipoPago+"&listaPlatos="+listaPlatos+"&listaAdicionales="+listaAdicionales,true);
+    xmlhttp.send();
+}

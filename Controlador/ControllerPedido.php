@@ -17,17 +17,18 @@ require 'ControladorPedido.php';
 		} 
 		*/
       	$controlador = new ControladorPedido();
-      	$controlador->insertarPedido($fecha,$estado,$tipoPago,$idCajero);
-		for ($i=0;$i<count($listaPlatos);$i++){
-			$valores = split("-",$listaPlatos[$i]);
-			$controlador->insertarPlatoPedido($valores[0],$valores[1]);
-		}
-		for ($i=0;$i<count($listaAdicionales);$i++){
-			$valores = split("-",$listaAdicionales[$i]);     
-			$controlador->insertarAdicionalPedido($valores[0],$valores[1]);
-		}
+      	$controlador->insertarPedido($fecha, $estado, $tipoPago, $idCajero);
 		
-		header('Location: ../View/PanelCajero.php');
-		
-    //}
+		for ($i=0; $i<count($listaPlatos); $i++){
+			$valores = split("-", $listaPlatos[$i]);
+			//Qué recibe insertarPlatoPedido? id y cantidad? no me queda claro
+			//si se supone que recibe algo como esto:
+			// "4 - Carne a la plancha"
+			$controlador->insertarPlatoPedido($valores[0], $valores[1]);
+		}
+
+		for ($i=0; $i<count($listaAdicionales); $i++){
+			$valores = split("-", $listaAdicionales[$i]);     
+			$controlador->insertarAdicionalPedido($valores[0], $valores[1]);
+		}
 ?>

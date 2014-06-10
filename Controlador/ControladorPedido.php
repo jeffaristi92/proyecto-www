@@ -16,8 +16,8 @@
 			$this->daoPedido->insertarPedido($Pedido);
 		}
 		
-		public function insertarPlatoPedido($idPlato,$cantidad){
-			$platoPedido = new PlatoPedido($idPlato,0,$cantidad);		
+		public function insertarPlatoPedido($idPlato, $cantidad){
+			$platoPedido = new PlatoPedido($idPlato, 0, $cantidad);		
 			$this->daoPedido->insertarPlatoPedido($platoPedido);
 		}
 		
