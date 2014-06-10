@@ -21,7 +21,8 @@
 		        $stmt->bind_param('ssss',$pedido->getFecha(),$pedido->getEstado(),$pedido->getTipoPago(),$pedido->getIdCajero());  
 		        $stmt->execute();   
 		        $stmt->store_result();
-				echo "*Pedido registrado con exito";//mensaje para mostrar al usuario
+		        //mensaje para mostrar al usuario
+				echo "*Pedido registrado con éxito";
 	        	
 	        }//Fin consulta
 
@@ -36,7 +37,8 @@
 		        $stmt->bind_param('ii',$platoPedido->getIdPlato(),$platoPedido->getCantidad());  
 		        $stmt->execute();   
 		        $stmt->store_result();
-				echo "*Plato Pedido registrado con exito";//mensaje para mostrar al usuario
+		        //No es necesario mostrar esto
+				//echo "*Plato Pedido registrado con exito";
 	        	
 	        }//Fin consulta
 
@@ -52,7 +54,8 @@
 		        $stmt->bind_param('ii',$adicionalPedido->getIdAdicional(),$adicionalPedido->getCantidad());  
 		        $stmt->execute();   
 		        $stmt->store_result();
-				echo "*Adicional Pedido registrado con exito";//mensaje para mostrar al usuario
+		        //No es necesario mostrar esto
+				//echo "*Adicional Pedido registrado con exito";
 	        	
 	        }//Fin consulta
 

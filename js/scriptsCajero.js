@@ -70,13 +70,9 @@ function registrarPedido() {
   var fecha = $("#fecha").val();
   var estado = $("#estado").val();
   var tipoPago = $("#tipoPago").val();
-  var listaPlatos = $("#listaPlatos option:selected").text();
-  var listaAdicionales = $("#listaAdicionales  option:selected").text();
-  
-  alert(listaPlatos);
-   //@$listaPlatos = $_GET["listaPlatos"];
-   //@$listaAdicionales = $_GET["listaAdicionales"];
-
+  var listaPlatos = $("#listaPlatos").val();
+  var listaAdicionales = $("#listaAdicionales").val();
+ 
     xmlhttp.open("GET","../Controlador/ControllerPedido.php?fecha="+fecha+"&estado="+estado+"&tipoPago="+tipoPago+"&listaPlatos="+listaPlatos+"&listaAdicionales="+listaAdicionales,true);
     xmlhttp.send();
 }
