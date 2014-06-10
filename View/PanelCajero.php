@@ -22,9 +22,8 @@
     <link href="../css/stylesAdminSistema.css" rel="stylesheet">  
     <link href="../css/stylesCajero.css" rel="stylesheet">  
     <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>    
-    <script type="text/javascript" src="../js/scriptsPedido.js"></script>
+    <script type="text/javascript" src="../js/scriptsCajero.js"></script>
   </head>
-
   <body> 	
 
     <div class="container contenedor_menu">    
@@ -39,6 +38,7 @@
 	<script> var total=0; </script>
     
     <div class="container contenedor_contenido">
+
       <div class="row">
         <div class="col-md-6 plato">
           <div class="wrapper">
