@@ -5,8 +5,7 @@
 		private $servidor = 'localhost';		
 		private $dbName = 'www';
 		private $user = 'root';		
-		//private $password = 'jhon123';
-		private $password = 'root';
+		private $password = 'john123';
 		private $mysqli;
 		
 	    public function conectar() {
