@@ -66,9 +66,15 @@ select.activos, select.inactivos{
 		margin-left: 5%;
 		height: 155px;
 	}
+	.menu h1 {
+		font-size: 22px;
+	}
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {	
-
+	.menu h1 {
+		font-size: 20px;
+		margin-left: 0px;
+	}
 }
