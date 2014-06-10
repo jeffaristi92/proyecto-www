@@ -119,9 +119,13 @@
               <div class="row">       
                 <div class="col-md-12">                           
                    <div id="dashboard">
-                      <div id="control1"></div>                    
-                      <div id="chart1"></div>
-                      <div id="chart2"></div>
+                      <div id="control1"></div>  
+                      <div>
+                        <div id="chart1"></div>  
+                      </div>                  
+                      <div>
+                        <div id="chart2"></div>
+                      </div>                  
                   </div>               
                 </div>               
               </div>

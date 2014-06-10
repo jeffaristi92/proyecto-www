@@ -15,26 +15,31 @@
 	font-size: 17px;
 }
 
+.ventas_total .wrapper{
+	height: 590px;
+}
 select.activos, select.inactivos{
 	width: 75%;
 	margin-left: 35px;
 	height: 360px;
 }
-
-#dashboard #control1{
+#dashboard {
 	text-align: center;
+}
+#dashboard #control1{
 	margin-bottom: 42px;
 }
 #chart1, #chart2{
-	float: left;
-	margin-left: 20px;
+	display: inline-block;
 } 
 #chart1{
 	width: 218px;
 	height: 234px;
-	
+	margin-bottom: 22px;
 }
-
+#chart1 div svg{
+	height: 256px;
+}
 
 /* Large desktop */
 @media (min-width: 1200px) {	
