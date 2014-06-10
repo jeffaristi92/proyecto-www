@@ -1,17 +1,32 @@
 
 google.load('visualization', '1.1', {packages: ['controls']});
-google.setOnLoadCallback(drawVisualization);
+google.setOnLoadCallback(consultaDatos);
 
+var arrayJson;
 
-var arreglo = new Array();
-arreglo[0] = new Array ('Nombre', 'Edad', 'Donuts Comidas');
-arreglo[1] = new Array('Michael', 12, 5);
-arreglo[2] = new Array('Elisa', 20, 7);
-arreglo[3] = new Array('John', 23, 10);
+function consultaDatos() {
 
+        var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange=function() {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+              
+               arrayJson = JSON.parse(xmlhttp.responseText);
+               drawVisualization();
+            }
+          }
+        
+        xmlhttp.open("GET","../Controlador/ControllerReporte.php",true);
+        xmlhttp.send();
+}
 
 function drawVisualization() {
-        
+
+  var arreglo = new Array();
+
+        for(var i = 0; i < arrayJson.length; i++){
+          arreglo[i] = new Array(arrayJson[i][0], arrayJson[i][1], arrayJson[i][2]); 
+        }
+
         var data = google.visualization.arrayToDataTable(arreglo);
       
         // Define a slider control for the Age column.
@@ -19,7 +34,7 @@ function drawVisualization() {
           'controlType': 'NumberRangeFilter',
           'containerId': 'control1',
           'options': {
-            'filterColumnLabel': 'Edad',
+            'filterColumnLabel': 'Precio',
             'ui': {'labelStacking': 'vertical'}
           }
         });
@@ -46,7 +61,7 @@ function drawVisualization() {
             'width': 300,
             'height': 300,
             'legend': 'none',
-            'title': 'Donuts eaten per person',
+            'title': 'Platos vendidos',
             'chartArea': {'left': 15, 'top': 15, 'right': 0, 'bottom': 0},
             'pieSliceText': 'label'
           },
@@ -64,12 +79,9 @@ function drawVisualization() {
           }
         });
       
-        // Create a dashboard
         new google.visualization.Dashboard(document.getElementById('dashboard')).
             // Establish bindings, declaring the both the slider and the category
             // picker will drive both charts.
             //bind([slider, categoryPicker], [pie, table]).
-            bind([slider], [pie, table]).  
-            // Draw the entire dashboard.
-            draw(data);
+            bind([slider], [pie, table]).draw(data);
 }

@@ -43,6 +43,7 @@
 	        }
 			$this->conexionBd->desconectar($conexion);				
 		}//fin método consultarPlatosActivos
+
 		public function consultarPlatos(){			
 			
 			$conexion = $this->conexionBd->conectar();
