@@ -1,0 +1,7 @@
+.contenedor_contenido .wrapper {
+	height: 685px;
+	margin-bottom: 20px;
+}
+.contenedor_contenido .wrapper  #boton{
+	background-color: rgb(235, 235, 235);
+}
