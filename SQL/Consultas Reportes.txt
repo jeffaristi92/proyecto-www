@@ -1,0 +1,13 @@
+SELECT nombre, precio, info.cantidad FROM Plato, (SELECT idPlato, cantidad FROM Pedido, Plato_Pedido WHERE estado = 'Realizado' 
+AND Pedido.idPedido = Plato_Pedido.idPedido) AS info
+WHERE Plato.idPlato = info.idPlato;
+
+-->Debe permitir generar reportes de las ventas totales diarias, mensuales y anuales, discriminando
+valores de platos y valores de impuestos, en formato de texto y gráficos. 
+
+-->Debe permitir generar reportes de los tres platos más vendidos en una determinada fecha, en
+formato de texto y gráficos.
+
+-->Debe permitir generar un reporte que muestre como ha sido la variabilidad de ventas para un
+mes (día a día ) o para una año mes a mes, en formato gráfico.
+
