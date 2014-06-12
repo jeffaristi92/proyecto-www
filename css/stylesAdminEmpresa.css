@@ -33,12 +33,9 @@ select.activos, select.inactivos{
 	display: inline-block;
 } 
 #chart1{
-	width: 218px;
-	height: 234px;
-	margin-bottom: 22px;
-}
-#chart1 div svg{
-	height: 256px;
+	width: 279px;
+	height: 245px;
+	margin-bottom: 20px;
 }
 
 /* Large desktop */

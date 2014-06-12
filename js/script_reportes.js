@@ -59,8 +59,8 @@ function drawVisualization() {
           'chartType': 'PieChart',
           'containerId': 'chart1',
           'options': {
-            'width': 300,
-            'height': 300,
+            'width': 400,
+            'height': 350,
             'legend': 'none',
             'title': 'Platos vendidos',
             'chartArea': {'left': 15, 'top': 15, 'right': 0, 'bottom': 0},
