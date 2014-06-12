@@ -71,7 +71,7 @@
 		        $stmt->store_result();			
 	        	$stmt->bind_result($pedido,$fecha,$estado,$tipoPago,$idCajero);
 	       		$items = array();	       		
-	       		
+	       		$stmt->fetch();
 				echo '<table id="datosPedido"><tr><td>Numero de pedido</td><td>'.$pedido.'</td></tr>';
 				echo '<tr><td>Fecha</td><td>'.$fecha.'</td></tr>';
 				echo '<tr><td>Estado</td><td>'.$estado.'</td></tr>';
@@ -91,6 +91,7 @@
 		        $stmt->store_result();			
 	        	$stmt->bind_result($cantidad,$nombre,$precio,$total);
 	       		$items = array();
+				echo '<h1>Platos</h1>';
 				echo '<table id ="tablaPlatos"><tr><td>Cantidad</td><td>Nombre</td><td>Precio</td><td>Total</td></tr>';
 	       		while ($stmt->fetch()) {	       			
 						echo '<tr><td>'.$cantidad.'</td><td>'.$nombre.'</td><td>'.$precio.'</td><td>'.$total.'</td></tr>';	
@@ -104,12 +105,13 @@
 		public function consultarAdicionalesPedido($idPedido){
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, precio, (cantidad*precio) as total FROM Plato, adicional_pedido WHERE adicional_pedido.idAdicional = adicional.idAdicional and adicional_pedido.idPedido =".$idPedido)){
+			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, precio, (cantidad*precio) as total FROM Adicional, adicional_pedido WHERE adicional_pedido.idAdicional = adicional.idAdicional and adicional_pedido.idPedido =".$idPedido)){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
 	        	$stmt->bind_result($cantidad,$nombre,$precio,$total);
 	       		$items = array();
+				echo '<h1>Adicionales</h1>';
 				echo '<table id ="tablaAdicionales"><tr><td>Cantidad</td><td>Nombre</td><td>Precio</td><td>Total</td></tr>';
 	       		while ($stmt->fetch()) {	       			
 						echo '<tr><td>'.$cantidad.'</td><td>'.$nombre.'</td><td>'.$precio.'</td><td>'.$total.'</td></tr>';	
