@@ -13,11 +13,10 @@
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT nombre, precio, info.cantidad FROM Plato, 
-													(SELECT idPlato, cantidad FROM Pedido, Plato_Pedido 
-														WHERE estado = 'Realizado' 
-														AND Pedido.idPedido = Plato_Pedido.idPedido) AS info
-											WHERE Plato.idPlato = info.idPlato")){
+			if ($stmt = $conexion->prepare("SELECT nombre, precio, cantidad FROM Plato, 
+				(SELECT idPlato, sum(cantidad) as cantidad FROM Pedido, Plato_Pedido WHERE estado = 'Realizado' 
+				AND Pedido.idPedido = Plato_Pedido.idPedido GROUP BY idPlato) AS info
+				WHERE Plato.idPlato = info.idPlato;")){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
@@ -28,7 +27,7 @@
 	       		$contador = 1;
 	       		while ($stmt->fetch()) {	       			
 					
-					$datos[$contador] = Array("$nombre", $precio, $cantidad);					
+					$datos[$contador] = Array("$nombre", $precio, (int)$cantidad);					
 					$contador++;
     			}	        	
     			echo json_encode($datos); 

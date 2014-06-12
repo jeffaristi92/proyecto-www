@@ -10,8 +10,9 @@ function consultaDatos() {
           xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
               
-               arrayJson = JSON.parse(xmlhttp.responseText);
-               drawVisualization();
+              //alert(xmlhttp.responseText);
+              arrayJson = JSON.parse(xmlhttp.responseText);
+              drawVisualization();
             }
           }
         
@@ -83,5 +84,6 @@ function drawVisualization() {
             // Establish bindings, declaring the both the slider and the category
             // picker will drive both charts.
             //bind([slider, categoryPicker], [pie, table]).
+            //bind([slider], [pie, table]).draw(data);
             bind([slider], [pie, table]).draw(data);
 }
