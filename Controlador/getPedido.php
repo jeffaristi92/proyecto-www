@@ -6,4 +6,5 @@
  $daoPedido->consultarPedido($idPedido);
  $daoPedido->consultarPlatosPedido($idPedido);
  $daoPedido->consultarAdicionalesPedido($idPedido);
+ $daoPedido->getResumenPedido($idPedido);
 ?>
