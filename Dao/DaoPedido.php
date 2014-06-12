@@ -91,7 +91,7 @@
 		        $stmt->store_result();			
 	        	$stmt->bind_result($cantidad,$nombre,$precio,$total);
 	       		$items = array();
-				echo '<h1>Platos</h1>';
+				echo '<h3>Platos</h3>';
 				echo '<table id ="tablaPlatos"><tr><td>Cantidad</td><td>Nombre</td><td>Precio</td><td>Total</td></tr>';
 	       		while ($stmt->fetch()) {	       			
 						echo '<tr><td>'.$cantidad.'</td><td>'.$nombre.'</td><td>'.$precio.'</td><td>'.$total.'</td></tr>';	
@@ -111,7 +111,7 @@
 		        $stmt->store_result();			
 	        	$stmt->bind_result($cantidad,$nombre,$precio,$total);
 	       		$items = array();
-				echo '<h1>Adicionales</h1>';
+				echo '<h3>Adicionales</h3>';
 				echo '<table id ="tablaAdicionales"><tr><td>Cantidad</td><td>Nombre</td><td>Precio</td><td>Total</td></tr>';
 	       		while ($stmt->fetch()) {	       			
 						echo '<tr><td>'.$cantidad.'</td><td>'.$nombre.'</td><td>'.$precio.'</td><td>'.$total.'</td></tr>';	
@@ -127,6 +127,71 @@
 		
 		public function confirmarPedido($idPedido){
 		}
+		
+		public function consultarDatosEmpresa($idPedido){
+		$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("SELECT* FROM empresa WHERE idEmpresa in (select idEmpresa from usuario where usuario in (select idCajero from pedido where idPedido = ".$idPedido."))")){
+				        		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($idEmpresa,$titulo,$logo,$url,$direccion,$telefono);
+	       		$items = array();
+				$stmt->fetch();
+				echo '<table>';
+				echo '<tr><td>'.$titulo.'</td></tr>';
+				echo '<tr><td>'.$direccion.'</td></tr>';
+				echo '<tr><td>'.$telefono.'</td></tr>';
+				echo '<tr><td>'.$url.'</td></tr>';
+				//echo '<tr><td>'.$idEmpresa.'</td></tr>';
+				//echo '<tr><td>'.$idEmpresa.'</td></tr>';
+				echo '</table>';
+			}
+		}
+		
+		public function getTotalPlatosPedido($idPedido){
+			$valor = 0;
+			$conexion = $this->conexionBd->conectar();
+			if ($stmt = $conexion->prepare("SELECT sum(precio*cantidad) FROM plato, plato_pedido WHERE plato.idPlato = plato_pedido.idPlato and idPedido =".$idPedido)){   		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($total);
+	       		$items = array();
+				$stmt->fetch();
+				
+				$valor = $total;
+			}
+			return $valor;
+		}
+		
+		function getTotalAdicionalesPedido($idPedido){
+			$valor = 0;
+			
+			$conexion = $this->conexionBd->conectar();
+			if ($stmt = $conexion->prepare("SELECT sum(precio*cantidad) FROM adicional, Adicional_pedido WHERE adicional.idAdicional = adicional_pedido.idAdicional and idPedido =".$idPedido)){   		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($total);
+	       		$items = array();
+				$stmt->fetch();
+				$valor = $total;
+			}
+			return $valor;
+		}
+		
+		function getResumenPedido($idPedido){
+			$totalPlatos = $this->getTotalPlatosPedido($idPedido);
+			$totalAdicionales = $this->getTotalAdicionalesPedido($idPedido);
+			$subtotal = $totalPlatos + $totalAdicionales;
+			$iva = $subtotal*0.16;
+			$total = $subtotal + $iva;
+			echo '<table>';
+			echo '<tr><td>Subtotal</td><td>'.$subtotal.'</td></tr>';
+			echo '<tr><td>Iva</td><td>'.$iva.'</td></tr>';
+			echo '<tr><td>Total</td><td>'.$total.'</td></tr>';
+			echo '</table>';
+		}
+		
 		
 	}
 ?>
