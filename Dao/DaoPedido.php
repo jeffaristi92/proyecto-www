@@ -62,5 +62,69 @@
 			$this->conexionBd->desconectar($conexion);			
 		}
 		
+		public function consultarPedido($idPedido){
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("SELECT* FROM Pedido WHERE idPEdido=".$idPedido)){
+				        		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($pedido,$fecha,$estado,$tipoPago,$idCajero);
+	       		$items = array();	       		
+	       		
+				echo '<tr><td>Numero de pedido</td><td>'.$pedido.'</td></tr>';
+				echo '<tr><td>Fecha</td><td>'.$fecha.'</td></tr>';
+				echo '<tr><td>Estado</td><td>'.$estado.'</td></tr>';
+				echo '<tr><td>Tipo de pago</td><td>'.$tipoPago.'</td></tr>';
+				echo '<tr><td>Cajero</td><td>'.$idCajero.'</td></tr>';
+	        }
+
+			$this->conexionBd->desconectar($conexion);		
+		}
+		
+		public function consultarPlatosPedido($idPedido){
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, precio, (cantidad*precio) as total FROM Plato, plato_pedido WHERE plato_pedido.idPlato = plato.idPlato and plato_pedido.idPedido =".$idPedido)){
+				        		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($cantidad,$nombre,$precio,$total);
+	       		$items = array();
+				echo '<table id ="tablaPlatos"><tr><td>Cantidad</td><td>Nombre</td><td>Precio</td><td>Total</td></tr>';
+	       		while ($stmt->fetch()) {	       			
+						echo '<tr><td>'.$cantidad.'</td><td>'.$nombre.'</td><td>'.$precio.'</td><td>'.$total.'</td></tr>';	
+    			}
+				echo '</table>';	        	
+	        }
+
+			$this->conexionBd->desconectar($conexion);		
+		}
+		
+		public function consultarAdicionalesPedido($idPedido){
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, precio, (cantidad*precio) as total FROM Plato, adicional_pedido WHERE adicional_pedido.idAdicional = adicional.idAdicional and adicional_pedido.idPedido =".$idPedido)){
+				        		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($cantidad,$nombre,$precio,$total);
+	       		$items = array();
+				echo '<table id ="tablaAdicionales"><tr><td>Cantidad</td><td>Nombre</td><td>Precio</td><td>Total</td></tr>';
+	       		while ($stmt->fetch()) {	       			
+						echo '<tr><td>'.$cantidad.'</td><td>'.$nombre.'</td><td>'.$precio.'</td><td>'.$total.'</td></tr>';	
+    			}
+				echo '</table>';	        	
+	        }
+
+			$this->conexionBd->desconectar($conexion);
+		}
+		
+		public function cancelarPedido($idPedido){
+		}
+		
+		public function confirmarPedido($idPedido){
+		}
+		
 	}
 ?>
