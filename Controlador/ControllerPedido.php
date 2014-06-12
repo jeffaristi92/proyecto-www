@@ -5,7 +5,7 @@ require 'ControladorPedido.php';
     //if($_GET['fecha'] && $_GET['estado'] && $_GET['tipoPago'] && $_GET['idCajero']){
 
     	@$fecha = $_GET['fecha'];
-    	@$estado = $_GET['estado'];
+    	@$estado = 'en proceso';
         @$tipoPago = $_GET['tipoPago'];
         @$idCajero = $_SESSION['usuario'];
 		@$listaPlatos = $_GET["listaPlatos"];

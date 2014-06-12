@@ -76,3 +76,17 @@ function registrarPedido() {
     xmlhttp.open("GET","../Controlador/ControllerPedido.php?fecha="+fecha+"&estado="+estado+"&tipoPago="+tipoPago+"&listaPlatos="+listaPlatos+"&listaAdicionales="+listaAdicionales,true);
     xmlhttp.send();
 }
+
+function consultarPedido(){
+  var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("respuesta_pedido").innerHTML=xmlhttp.responseText;
+      }
+    }
+
+  var idPedido = $("#idPedido").val();
+ 
+    xmlhttp.open("GET","../Controlador/getPedido.php?idPedido="+idPedido,true);
+    xmlhttp.send();
+}

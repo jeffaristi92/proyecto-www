@@ -43,11 +43,6 @@
                <form class="form-signin" role="form" action="../Controlador/ControllerPedido.php" method="GET">
                     
                     <input id="fecha" type="date" class="form-control" autofocus>
-                    <select id="estado" class="form-control" autofocus>
-                        <option value="En Proceso">En Proceso</option>
-                        <option value="Realizado">Realizado</option>
-                        <option value="Cancelado">Cancelado</option>
-                    </select>
                     <select id="tipoPago" class="form-control" autofocus>
                         <option value="Credito">Credito</option>
                         <option value="Debito">Debito</option>

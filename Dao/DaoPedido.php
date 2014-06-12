@@ -65,18 +65,18 @@
 		public function consultarPedido($idPedido){
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT* FROM Pedido WHERE idPEdido=".$idPedido)){
+			if ($stmt = $conexion->prepare("SELECT* FROM Pedido WHERE idPedido=".$idPedido)){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
 	        	$stmt->bind_result($pedido,$fecha,$estado,$tipoPago,$idCajero);
 	       		$items = array();	       		
 	       		
-				echo '<tr><td>Numero de pedido</td><td>'.$pedido.'</td></tr>';
+				echo '<table id="datosPedido"><tr><td>Numero de pedido</td><td>'.$pedido.'</td></tr>';
 				echo '<tr><td>Fecha</td><td>'.$fecha.'</td></tr>';
 				echo '<tr><td>Estado</td><td>'.$estado.'</td></tr>';
 				echo '<tr><td>Tipo de pago</td><td>'.$tipoPago.'</td></tr>';
-				echo '<tr><td>Cajero</td><td>'.$idCajero.'</td></tr>';
+				echo '<tr><td>Cajero</td><td>'.$idCajero.'</td></tr></table>';
 	        }
 
 			$this->conexionBd->desconectar($conexion);		
