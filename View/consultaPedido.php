@@ -18,7 +18,7 @@
          <h1>Bienvenido <?php echo $_SESSION['usuario']?>!</h1>
          <div class="funciones">
 				<a class="a_usuario" href="PanelCajero.php?opcion=registrar" data-toggle="tooltip" data-placement="bottom" title="Usuarios">
-					<img src="../img/user.png"/>
+					<img src="../img/adicional.png"/>
 				</a>
 				<a class="a_empresa" href="PanelCajero.php?opcion=consultar" data-toggle="tooltip" data-placement="bottom" title="Empresas"> 
 					<img src="../img/company.png"/>
@@ -38,15 +38,27 @@
                     <form class="form-signin" role="form" action="PanelCajero.php?opcion=consultar" method="get">
                         <input name="idPedido" id="idPedido" type="text" class="form-control" placeholder="Nro Pedido" autofocus>
                         <a class="btn enviar consultar_pedido">Consultar</a>
+                        <a class="btn enviar cancelar_pedido">Cancelar</a>
+                        <a class="btn enviar confirmar_pedido">Confirmar</a>
                     </form>
-                    <div id="respuesta_pedido"></div>
           		</div>
-        	</div>  
+        	</div>
+            <div class="col-md-6 plato">
+          		<div class="wrapper">
+            		<div id="respuesta_pedido"></div>
+                </div>
+            </div>  
     	</div>
   	</div>
     <script>
       $( ".consultar_pedido" ).click(function() {
         consultarPedido();
+      });
+	  $( ".cancelar_pedido" ).click(function() {
+        consultarPedido();
+      });
+	  $( ".confirmar_pedido" ).click(function() {
+        confirmarPedido();
       });
     </script>
   </body>

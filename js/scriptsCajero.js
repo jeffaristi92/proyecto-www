@@ -90,3 +90,12 @@ function consultarPedido(){
     xmlhttp.open("GET","../Controlador/getPedido.php?idPedido="+idPedido,true);
     xmlhttp.send();
 }
+
+function cancelarPedido(){
+}
+
+function confirmarPedido(){
+	var xmlhttp = new XMLHttpRequest();
+	var idPedido = $("#idPedido").val();
+	location.href="factura.php?idPedido="+idPedido;
+}

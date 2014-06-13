@@ -1,3 +1,14 @@
+<?php	
+   session_start();
+   $opcion = @$_GET['opcion'];
+
+	if(@$_SESSION['acceso'] == 1){
+	}else{
+		echo "<script type='text/javascript' language='javascript'>
+				location.href='../index.php';
+			</script>";	
+	}	
+?>
 <html>
 <head>
 <link href="../css/stylesFactura.css" rel="stylesheet"> 

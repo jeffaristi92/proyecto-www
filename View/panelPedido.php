@@ -19,7 +19,7 @@
          <h1>Bienvenido <?php echo $_SESSION['usuario']?>!</h1>
          <div class="funciones">
 				<a class="a_usuario" href="PanelCajero.php?opcion=registrar" data-toggle="tooltip" data-placement="bottom" title="Usuarios">
-					<img src="../img/user.png"/>
+					<img src="../img/adicional.png"/>
 				</a>
 				<a class="a_empresa" href="PanelCajero.php?opcion=consultar" data-toggle="tooltip" data-placement="bottom" title="Empresas"> 
 					<img src="../img/company.png"/>
