@@ -55,20 +55,20 @@
                             consultarPlatos();
                           </script>
                     </select>
-                    <input name="cantidadPlato" type="text" id="cantidadPlato"/>
-                    <input id="boton" type="button" value="Agregar plato" onClick="agregarPlato()"/>
+                    <input name="cantidadPlato" type="text" id="cantidadPlato" onkeyup="validarboton(this.value,'botonP')"/>
+                    <input id="botonP" type="button" value="Agregar plato" onClick="agregarPlato()" disabled/>
                     <select id="listaPlatos" name="listaPlatos[]" multiple="multiple">
                     </select>
                     
                     <select id="adicionales">
                           <?php require '../Controlador/getAdicional.php';?>
                     </select>
-                    <input name="cantidadAdicional" type="text" id="cantidadAdicional"/>
-                    <input id="boton" type="button" value="Agregar Adicional" onClick="agregarAdicional()"/>
+                    <input name="cantidadAdicional" type="text" id="cantidadAdicional" onkeyup="validarboton(this.value,'botonA')"/>
+                    <input id="botonA" type="button" value="Agregar Adicional" onClick="agregarAdicional()" disabled/>
                     <select id="listaAdicionales" name="listaAdicionales[]" multiple="multiple">
                     </select>                    
 
-                    <a class="btn enviar registrar_pedido">Registrar</a>
+                    <a id = "botonregistrarpedi" class="btn enviar registrar_pedido" disabled>Registrar</a>
                     <div id="respuesta_pedido"></div>
                 </form>
                 <table id="precioTotal"></table>

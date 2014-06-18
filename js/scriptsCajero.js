@@ -1,5 +1,6 @@
 function agregarPlato(){
-
+	boton = document.getElementById('botonregistrarpedi');
+	boton.removeAttribute("disabled");
 	indice = document.getElementById("platos").selectedIndex;
 	valor = document.getElementById("platos").options[indice].firstChild.nodeValue;
 	var cantidad = document.getElementById("cantidadPlato").value
@@ -23,10 +24,12 @@ function agregarPlato(){
 	
 	var lista = document.getElementById("listaPlatos");
 	lista.appendChild(opcion);
+	
 }
 
 function agregarAdicional(){
-
+	boton = document.getElementById('botonregistrarpedi');
+	boton.removeAttribute("disabled");
 	indice = document.getElementById("adicionales").selectedIndex;
 	valor = document.getElementById("adicionales").options[indice].firstChild.nodeValue;
 	var cantidad = document.getElementById("cantidadAdicional").value
@@ -117,4 +120,16 @@ function confirmarPedido(){
 	var xmlhttp = new XMLHttpRequest();
 	var idPedido = $("#idPedido").val();
 	location.href="factura.php?idPedido="+idPedido;
+}
+
+function validarboton(val,btx) {
+		boton = document.getElementById(btx);
+		if(val>0 || val==null || val==""){			
+			if (val==null || val=="") {boton.disabled=true} 
+			else {boton.disabled=false} 
+		} else {alert('Alguno de los valores ingresados es no numerico, un numero no valido');
+			boton.disabled=true;
+		}
+
+		
 }
