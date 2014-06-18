@@ -15,8 +15,8 @@ function consultaDatos() {
               drawVisualization();
             }
           }
-        
-        xmlhttp.open("GET","../Controlador/ControllerReporte.php",true);
+        var idEmpresa = document.getElementById("idEmpresa").innerHTML;
+        xmlhttp.open("GET","../Controlador/ControllerReporte.php?idEmpresa="+ idEmpresa, true);
         xmlhttp.send();
 }
 

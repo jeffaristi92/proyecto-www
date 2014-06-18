@@ -11,9 +11,9 @@ require_once ('../Dao/DaoReporte.php');
 			$this->daoReporte = new DaoReporte();	
 		}
 
-		public function reporteVentasTotales(){
+		public function reporteVentasTotales($idEmpresa){
 			
-			$this->daoReporte->consultarVentas();	
+			$this->daoReporte->consultarVentas($idEmpresa);	
 		}
 
 	}//Fin clase

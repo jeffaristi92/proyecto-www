@@ -9,14 +9,14 @@
 			$this->conexionBd = new DataBase();
 		}
 		
-		public function consultarVentas(){			
+		public function consultarVentas($idEmpresa){			
 			
 			$conexion = $this->conexionBd->conectar();
 
 			if ($stmt = $conexion->prepare("SELECT nombre, precio, cantidad FROM Plato, 
 				(SELECT idPlato, sum(cantidad) as cantidad FROM Pedido, Plato_Pedido WHERE estado = 'Realizado' 
 				AND Pedido.idPedido = Plato_Pedido.idPedido GROUP BY idPlato) AS info
-				WHERE Plato.idPlato = info.idPlato;")){
+				WHERE Plato.idPlato = info.idPlato and Plato.idEmpresa = $idEmpresa;")){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			

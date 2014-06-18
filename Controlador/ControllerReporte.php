@@ -2,7 +2,11 @@
 
   require_once ('ControladorReporte.php');
 
-  $controlador = new ControladorReporte();  
-  $controlador->reporteVentasTotales();
-  
+  if($_GET['idEmpresa']){
+
+  	$idEmpresa = $_GET['idEmpresa'];
+
+  	$controlador = new ControladorReporte();  
+  	$controlador->reporteVentasTotales($idEmpresa);
+  }
 ?>
