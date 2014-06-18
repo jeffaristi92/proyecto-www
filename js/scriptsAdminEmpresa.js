@@ -11,7 +11,6 @@ $(document).ready(function(){
 			$('html, body').animate({ scrollTop: "0px" }, 900);			   
 		  });
 	    /*Fin*/     
-      
 });
 
 function registrarAdicional() {

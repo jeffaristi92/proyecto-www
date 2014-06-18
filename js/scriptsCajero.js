@@ -1,4 +1,5 @@
 function agregarPlato(){
+
 	indice = document.getElementById("platos").selectedIndex;
 	valor = document.getElementById("platos").options[indice].firstChild.nodeValue;
 	var cantidad = document.getElementById("cantidadPlato").value
@@ -25,6 +26,7 @@ function agregarPlato(){
 }
 
 function agregarAdicional(){
+
 	indice = document.getElementById("adicionales").selectedIndex;
 	valor = document.getElementById("adicionales").options[indice].firstChild.nodeValue;
 	var cantidad = document.getElementById("cantidadAdicional").value
@@ -51,6 +53,7 @@ function agregarAdicional(){
 }
 
 function removerPlato(){
+
 	var plato = document.getElementById("listaPlatos").value;
 	var lista = document.getElementById("listaPlatos");
 	//alert(plato);
@@ -77,7 +80,23 @@ function registrarPedido() {
     xmlhttp.send();
 }
 
+function consultarPlatos(){
+
+	var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("platos").innerHTML=xmlhttp.responseText;
+      }
+    }
+
+    var idEmpresa = document.getElementById("idEmpresa").innerHTML;
+ 
+    xmlhttp.open("GET","../Controlador/getPlato.php?idEmpresa="+idEmpresa,true);
+    xmlhttp.send();
+}	
+
 function consultarPedido(){
+
   var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (xmlhttp.readyState==4 && xmlhttp.status==200) {

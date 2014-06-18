@@ -40,6 +40,7 @@
           <div class="wrapper">
             <h3>Registrar Pedido</h3>  
 
+               <div id="idEmpresa" style="display: none;"><?php echo $_SESSION['empresa'] ?></div>   
                <form class="form-signin" role="form" action="../Controlador/ControllerPedido.php" method="GET">
                     
                     <input id="fecha" type="date" class="form-control" autofocus>
@@ -50,7 +51,9 @@
                     </select>
                                         
                     <select id="platos">
-                          <?php require '../Controlador/getPlato.php';?>
+                          <script>
+                            consultarPlatos();
+                          </script>
                     </select>
                     <input name="cantidadPlato" type="text" id="cantidadPlato"/>
                     <input id="boton" type="button" value="Agregar plato" onClick="agregarPlato()"/>

@@ -2,6 +2,10 @@
   
  	require ('../Dao/DaoPlato.php');
 
-    $daoPlato = new DaoPlato();
-    $daoPlato->consultarPlatos();
+ 	if($_GET['idEmpresa']){
+
+ 		$idEmpresa = $_GET['idEmpresa'];
+    	$daoPlato = new DaoPlato();
+    	$daoPlato->consultarPlatos($idEmpresa);
+ 	}
 ?>

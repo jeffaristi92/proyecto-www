@@ -44,11 +44,12 @@
 			$this->conexionBd->desconectar($conexion);				
 		}//fin método consultarPlatosActivos
 
-		public function consultarPlatos(){			
+		//método usado por panelCajero para listar los platos activos de la empresa a la que corresponde
+		public function consultarPlatos($idEmpresa){			
 			
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT idPlato, nombre, precio FROM Plato WHERE activo=1")){
+			if ($stmt = $conexion->prepare("SELECT idPlato, nombre, precio FROM Plato WHERE activo=1 and Plato.idEmpresa = $idEmpresa")){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
@@ -61,6 +62,7 @@
 
 			$this->conexionBd->desconectar($conexion);				
 		}
+
 		public function consultarPlatosInactivos($idEmpresa){			
 			
 			$conexion = $this->conexionBd->conectar();
