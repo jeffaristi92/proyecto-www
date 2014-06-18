@@ -123,9 +123,23 @@
 		}
 		
 		public function cancelarPedido($idPedido){
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("UPDATE Pedido SET estado = 'Cancelado' WHERE  idPedido = ".$idPedido)){
+				$stmt->execute();   
+		        $stmt->store_result();
+	        }
+			$this->conexionBd->desconectar($conexion);
 		}
 		
 		public function confirmarPedido($idPedido){
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("UPDATE Pedido SET estado = 'Realizado' WHERE  idPedido = ".$idPedido)){
+				$stmt->execute();   
+		        $stmt->store_result();
+	        }
+			$this->conexionBd->desconectar($conexion);
 		}
 		
 		public function getNroPedido(){
