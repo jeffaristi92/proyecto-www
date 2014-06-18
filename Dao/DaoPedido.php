@@ -128,6 +128,23 @@
 		public function confirmarPedido($idPedido){
 		}
 		
+		public function getNroPedido(){
+			$conexion = $this->conexionBd->conectar();
+
+			if ($stmt = $conexion->prepare("SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'www' AND TABLE_NAME = 'Pedido'")){
+		        $stmt->execute();   
+		        $stmt->store_result();
+		        $stmt->bind_result($idPedido);
+	       		$items = array();	       		
+	       		$stmt->fetch();
+
+				return ($idPedido-1);
+	        	
+	        }//Fin consulta
+
+			$this->conexionBd->desconectar($conexion);	
+		}
+		
 		public function consultarDatosEmpresa($idPedido){
 		$conexion = $this->conexionBd->conectar();
 
