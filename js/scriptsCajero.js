@@ -17,7 +17,6 @@ function agregarPlato(){
 	
 	var opcion = document.createElement("option");
 	opcion.setAttribute("value",plato+"-"+cantidad);
-	opcion.setAttribute("onClick","removerPlato()");
 	opcion.setAttribute("selected",true);
 	
 	var contenido = document.createTextNode(cantidad+" - "+valor);
@@ -47,7 +46,6 @@ function agregarAdicional(){
 	
 	var opcion = document.createElement("option");
 	opcion.setAttribute("value",plato+"-"+cantidad);
-	//opcion.setAttribute("onClick","removerPlato()");
 	opcion.setAttribute("selected",true);
 	
 	var contenido = document.createTextNode(cantidad+" - "+valor);
@@ -58,12 +56,25 @@ function agregarAdicional(){
 }
 
 function removerPlato(){
+	var x = document.getElementById("listaPlatos");
+	var cantidad = x.value.split("-")[1];
+	var precio = x.options[x.selectedIndex].firstChild.nodeValue.split("$")[1];
+	total = total - (cantidad*precio);
+	var precioTotal = document.getElementById("precioTotal");
+	precioTotal.innerHTML = "<h3>"+total+"</h3>";
+	
+	x.remove(x.selectedIndex);
+}
 
-	var plato = document.getElementById("listaPlatos").value;
-	var lista = document.getElementById("listaPlatos");
-	//alert(plato);
-	plato.parentNode.removeChild(plato);
-	//lista.removeChild(plato);
+function removerAdicional(){
+	var x = document.getElementById("listaAdicionales");
+	var cantidad = x.value.split("-")[1];
+	var precio = x.options[x.selectedIndex].firstChild.nodeValue.split("$")[1];
+	total = total - (cantidad*precio);
+	var precioTotal = document.getElementById("precioTotal");
+	precioTotal.innerHTML = "<h3>"+total+"</h3>";
+	
+	x.remove(x.selectedIndex);
 }
 
 function registrarPedido() {

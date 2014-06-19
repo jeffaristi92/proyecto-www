@@ -86,7 +86,7 @@
 		public function consultarPlatosPedido($idPedido){
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, precio, (cantidad*precio) as total FROM Plato, Plato_Pedido WHERE plato_pedido.idPlato = plato.idPlato and plato_pedido.idPedido =".$idPedido)){
+			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, Precio, (cantidad*precio) as total FROM Plato, Plato_Pedido WHERE Plato_Pedido.idPlato = Plato.idPlato and Plato_Pedido.idPedido =".$idPedido)){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
@@ -106,7 +106,7 @@
 		public function consultarAdicionalesPedido($idPedido){
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, precio, (cantidad*precio) as total FROM Adicional, Adicional_Pedido WHERE adicional_pedido.idAdicional = adicional.idAdicional and adicional_pedido.idPedido =".$idPedido)){
+			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, Precio, (cantidad*Precio) as total FROM Adicional, Adicional_Pedido WHERE Adicional_Pedido.idAdicional = Adicional.idAdicional and Adicional_Pedido.idPedido =".$idPedido)){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
@@ -184,7 +184,7 @@
 		public function getTotalPlatosPedido($idPedido){
 			$valor = 0;
 			$conexion = $this->conexionBd->conectar();
-			if ($stmt = $conexion->prepare("SELECT sum(precio*cantidad) FROM Plato, Plato_Pedido WHERE plato.idPlato = plato_pedido.idPlato and idPedido =".$idPedido)){   		
+			if ($stmt = $conexion->prepare("SELECT sum(Precio*cantidad) FROM Plato, Plato_Pedido WHERE Plato.idPlato = Plato_Pedido.idPlato and idPedido =".$idPedido)){   		
 				$stmt->execute();   
 		        $stmt->store_result();			
 	        	$stmt->bind_result($total);
@@ -200,7 +200,7 @@
 			$valor = 0;
 			
 			$conexion = $this->conexionBd->conectar();
-			if ($stmt = $conexion->prepare("SELECT sum(precio*cantidad) FROM Adicional, Adicional_Pedido WHERE adicional.idAdicional = adicional_pedido.idAdicional and idPedido =".$idPedido)){   		
+			if ($stmt = $conexion->prepare("SELECT sum(precio*cantidad) FROM Adicional, Adicional_Pedido WHERE Adicional.idAdicional = Adicional_Pedido.idAdicional and idPedido =".$idPedido)){   		
 				$stmt->execute();   
 		        $stmt->store_result();			
 	        	$stmt->bind_result($total);

@@ -68,6 +68,7 @@
                     </select>
                     <input name="cantidadPlato" type="text" id="cantidadPlato" onkeyup="validarboton(this.value,'botonP')"/>
                     <input id="botonP" type="button" value="Agregar plato" onClick="agregarPlato()" disabled/>
+                    <input id="botonRP" type="button" value="Remover plato" onClick="removerPlato()" />
                     <select id="listaPlatos" name="listaPlatos[]" multiple="multiple">
                     </select>
                     
@@ -78,6 +79,7 @@
                     </select>
                     <input name="cantidadAdicional" type="text" id="cantidadAdicional" onkeyup="validarboton(this.value,'botonA')"/>
                     <input id="botonA" type="button" value="Agregar Adicional" onClick="agregarAdicional()" disabled/>
+                    <input id="botonRA" type="button" value="Remover Adicional" onClick="removerAdicional()" />
                     <select id="listaAdicionales" name="listaAdicionales[]" multiple="multiple">
                     </select>                    
 
