@@ -121,10 +121,11 @@ function consultarPedido(){
         document.getElementById("respuesta_consulta_pedido").innerHTML=xmlhttp.responseText;
       }
     }
-
-  var idPedido = $("#idPedido").val();
- 
-    xmlhttp.open("GET","../Controlador/getPedido.php?idPedido="+idPedido,true);
+	
+  	var idPedido = $("#idPedido").val();
+ 	var idEmpresa = document.getElementById("idEmpresa").innerHTML;
+	
+    xmlhttp.open("GET","../Controlador/getPedido.php?idPedido="+idPedido+"&idEmpresa="+idEmpresa,true);
     xmlhttp.send();
 }
 

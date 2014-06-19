@@ -224,6 +224,18 @@
 			echo '</table>';
 		}
 		
-		
+		function getEmpresaPedido($idPedido){
+			$valor = -1;
+			$conexion = $this->conexionBd->conectar();
+			if ($stmt = $conexion->prepare("SELECT idEmpresa FROM usuario where usuario in (select idCajero from Pedido where idPedido = $idPedido)")){   		
+				$stmt->execute();   
+		        $stmt->store_result();			
+	        	$stmt->bind_result($empresa);
+	       		$items = array();
+				$stmt->fetch();
+				$valor = $empresa;
+			}
+			return $valor;
+		}
 	}
 ?>
