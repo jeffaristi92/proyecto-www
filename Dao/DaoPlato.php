@@ -56,7 +56,7 @@
 	        	$stmt->bind_result($id, $value, $precio);
 	       		$items = array();	       		
 	       		while ($stmt->fetch()) {	       			
-						echo '<option value="'.$id."-".$precio.'">'.$value.'</option>';	
+						echo '<option value="'.$id."-".$precio.'">'.$value." - $".$precio.'</option>';	
     			}	        	
 	        }
 

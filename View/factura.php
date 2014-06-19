@@ -19,6 +19,7 @@
  $idPedido = @$_GET['idPedido'];
  
  $daoPedido = new DaoPedido();
+ $daoPedido->confirmarPedido($idPedido);
  $daoPedido->consultarDatosEmpresa($idPedido);
  $daoPedido->consultarPedido($idPedido);
  $daoPedido->consultarPlatosPedido($idPedido);

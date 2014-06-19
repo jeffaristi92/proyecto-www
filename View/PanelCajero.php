@@ -1,3 +1,14 @@
+<?php	
+   session_start();
+
+  	if(@$_SESSION['acceso'] == 1 && @$_SESSION['rol'] == 'cajero'){
+  		
+  	}else{
+  		echo "<script type='text/javascript' language='javascript'>
+  				location.href='../index.php';
+  			</script>";	
+  	}
+?>
 <!DOCTYPE html>
 
 <html lang="en"><head>
@@ -13,7 +24,6 @@
     <script type="text/javascript" src="../js/scriptsCajero.js"></script>
   </head>
   <body> 	
-	<?php session_start(); ?>
     <div class="container contenedor_menu">    
       <div class="menu">
          <h1>Bienvenido <?php echo $_SESSION['usuario']?>!</h1>
@@ -61,7 +71,9 @@
                     </select>
                     
                     <select id="adicionales">
-                          <?php require '../Controlador/getAdicional.php';?>
+                          <script>
+                            consultarAdicionales();
+                          </script>
                     </select>
                     <input name="cantidadAdicional" type="text" id="cantidadAdicional" onkeyup="validarboton(this.value,'botonA')"/>
                     <input id="botonA" type="button" value="Agregar Adicional" onClick="agregarAdicional()" disabled/>
@@ -71,15 +83,45 @@
                     <a id = "botonregistrarpedi" class="btn enviar registrar_pedido" disabled>Registrar</a>
                     <div id="respuesta_pedido"></div>
                 </form>
-                <table id="precioTotal"></table>
+                <table>
+                	<tr>
+                    <td>
+                    <h3>Total:</h3>
+                    </td>
+                    <td  id="precioTotal">
+                    </td>
+                    </tr>
+                </table>
           </div>
         </div><!--plato-->
+        
+        <div class="col-md-6 plato">
+          		<div class="wrapper">
+            		<h3>Consultar Pedido</h3>
+                    <form class="form-signin" role="form" action="PanelCajero.php?opcion=consultar" method="get">
+                        <input name="idPedido" id="idPedido" type="text" class="form-control" placeholder="Nro Pedido" autofocus>
+                        <a class="btn enviar consultar_pedido">Consultar</a>
+                        <a class="btn enviar cancelar_pedido">Cancelar</a>
+                        <a class="btn enviar confirmar_pedido">Confirmar</a>
+                    </form>
+                    <div id="respuesta_consulta_pedido"></div>
+          		</div>
+        	</div>
       </div><!--FIN row-->
     </div><!--FIN Container-->
     
      <script>
       $( ".registrar_pedido" ).click(function() {
         registrarPedido();
+      });
+	  $( ".consultar_pedido" ).click(function() {
+        consultarPedido();
+      });
+	  $( ".cancelar_pedido" ).click(function() {
+        cancelarPedido();
+      });
+	  $( ".confirmar_pedido" ).click(function() {
+        confirmarPedido();
       });
     </script>
 

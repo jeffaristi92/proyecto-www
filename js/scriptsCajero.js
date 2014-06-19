@@ -12,7 +12,7 @@ function agregarPlato(){
 	total = total + (cantidad*precio);
 	
 	var precioTotal = document.getElementById("precioTotal");
-	precioTotal.innerHTML = total;
+	precioTotal.innerHTML = "<h3>"+total+"</h3>";
 	
 	var opcion = document.createElement("option");
 	opcion.setAttribute("value",plato+"-"+cantidad);
@@ -41,7 +41,7 @@ function agregarAdicional(){
 	total = total + (cantidad*precio);
 	
 	var precioTotal = document.getElementById("precioTotal");
-	precioTotal.innerHTML = total;
+	precioTotal.innerHTML = "<h3>"+total+"</h3>";;
 	
 	var opcion = document.createElement("option");
 	opcion.setAttribute("value",plato+"-"+cantidad);
@@ -96,6 +96,21 @@ function consultarPlatos(){
  
     xmlhttp.open("GET","../Controlador/getPlato.php?idEmpresa="+idEmpresa,true);
     xmlhttp.send();
+}
+
+function consultarAdicionales(){
+
+	var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("adicionales").innerHTML=xmlhttp.responseText;
+      }
+    }
+
+    var idEmpresa = document.getElementById("idEmpresa").innerHTML;
+ 
+    xmlhttp.open("GET","../Controlador/getAdicional.php?idEmpresa="+idEmpresa,true);
+    xmlhttp.send();
 }	
 
 function consultarPedido(){
@@ -103,7 +118,7 @@ function consultarPedido(){
   var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-        document.getElementById("respuesta_pedido").innerHTML=xmlhttp.responseText;
+        document.getElementById("respuesta_consulta_pedido").innerHTML=xmlhttp.responseText;
       }
     }
 
@@ -114,12 +129,23 @@ function consultarPedido(){
 }
 
 function cancelarPedido(){
+	var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("respuesta_consulta_pedido").innerHTML=xmlhttp.responseText;
+      }
+    }
+
+  var idPedido = $("#idPedido").val();
+ 
+    xmlhttp.open("GET","../Controlador/cancelarPedido.php?idPedido="+idPedido,true);
+    xmlhttp.send();
 }
 
 function confirmarPedido(){
 	var xmlhttp = new XMLHttpRequest();
 	var idPedido = $("#idPedido").val();
-	location.href="factura.php?idPedido="+idPedido;
+	window.open("factura.php?idPedido="+idPedido);
 }
 
 function validarboton(val,btx) {

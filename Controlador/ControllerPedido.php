@@ -19,20 +19,20 @@ require 'ControladorPedido.php';
       	$controlador = new ControladorPedido();
       	$controlador->insertarPedido($fecha, $estado, $tipoPago, $idCajero);
 		
-		
 		$valores = split("," , $listaPlatos);
 		
-		for ($i=0; $i<count($valores); $i++){
-
-			$arreglo = 	split("-" , $valores[$i]);
-			$controlador->insertarPlatoPedido($arreglo[0], $arreglo[1]);
+		if($valores[0]!="null"){		
+			for ($i=0; $i<count($valores); $i++){
+				$arreglo = 	split("-" , $valores[$i]);
+				$controlador->insertarPlatoPedido($arreglo[0], $arreglo[1]);
+			}
 		}
-
 		$valores = split("," , $listaAdicionales);
-
-		for ($i=0; $i<count($valores); $i++){
-
-			$arreglo = split("-", $valores[$i]);  
-			$controlador->insertarAdicionalPedido($arreglo[0], $arreglo[1]);
+		
+		if($valores[0]!="null"){
+			for ($i=0; $i<count($valores); $i++){
+				$arreglo = split("-", $valores[$i]);  
+				$controlador->insertarAdicionalPedido($arreglo[0], $arreglo[1]);
+			}
 		}
 ?>

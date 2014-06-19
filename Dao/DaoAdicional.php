@@ -29,18 +29,18 @@
 			$this->conexionBd->desconectar($conexion);			
 		}
 
-		public function consultarAdicionales(){			
+		public function consultarAdicionales($idEmpresa){			
 			
-			$conexion = $this->conexionBd->conectar();
-
-			if ($stmt = $conexion->prepare("SELECT idAdicional, nombre, precio FROM Adicional")){
+			$conexion = $this->conexionBd->conectar();	
+			if ($stmt = $conexion->prepare("SELECT idAdicional, nombre, precio FROM Adicional WHERE Adicional.idEmpresa =$idEmpresa")){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
 	        	$stmt->bind_result($id, $value, $precio);
-	       		$items = array();	       		
+	       		$items = array();
+				       		
 	       		while ($stmt->fetch()) {	       			
-						echo '<option value="'.$id."-".$precio.'">'.$value.'</option>';	
+						echo '<option value="'.$id."-".$precio.'">'.$value.' - $'.$precio.'</option>';	
     			}	        	
 	        }
 

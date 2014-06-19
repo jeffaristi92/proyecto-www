@@ -22,7 +22,8 @@
 		        $stmt->execute();   
 		        $stmt->store_result();
 		        //mensaje para mostrar al usuario
-				echo "*Pedido registrado con éxito";
+				echo "*Pedido registrado con éxito</br>";
+				echo "Numero de pedido: ".$this->getNroPedido();
 	        	
 	        }//Fin consulta
 
@@ -124,10 +125,10 @@
 		
 		public function cancelarPedido($idPedido){
 			$conexion = $this->conexionBd->conectar();
-
 			if ($stmt = $conexion->prepare("UPDATE Pedido SET estado = 'Cancelado' WHERE  idPedido = ".$idPedido)){
 				$stmt->execute();   
 		        $stmt->store_result();
+				echo "*Pedido Cancelado</br>";
 	        }
 			$this->conexionBd->desconectar($conexion);
 		}
