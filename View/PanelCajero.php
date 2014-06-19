@@ -13,6 +13,7 @@
 
 <html lang="en"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">    
 
     <title>Cajero</title>
@@ -28,12 +29,12 @@
       <div class="menu">
          <h1>Bienvenido <?php echo $_SESSION['usuario']?>!</h1>
          <div class="funciones">
-				<a class="a_usuario" href="PanelCajero.php?opcion=registrar" data-toggle="tooltip" data-placement="bottom" title="Usuarios">
+				<!--<a class="a_usuario" href="PanelCajero.php?opcion=registrar" data-toggle="tooltip" data-placement="bottom" title="Usuarios">
 					<img src="../img/adicional.png"/>
 				</a>
 				<a class="a_empresa" href="PanelCajero.php?opcion=consultar" data-toggle="tooltip" data-placement="bottom" title="Empresas"> 
 					<img src="../img/company.png"/>
-				</a>
+				</a>-->
 			 </div>
          <ul class="pull-right">
           <a id="cerrar_sesion" href="CerrarSesion.php">Cerrar Sesión</a>  
@@ -100,9 +101,9 @@
             		<h3>Consultar Pedido</h3>
                     <form class="form-signin" role="form" action="PanelCajero.php?opcion=consultar" method="get">
                         <input name="idPedido" id="idPedido" type="text" class="form-control" placeholder="Nro Pedido" autofocus>
-                        <a class="btn enviar consultar_pedido">Consultar</a>
-                        <a class="btn enviar cancelar_pedido">Cancelar</a>
                         <a class="btn enviar confirmar_pedido">Confirmar</a>
+                        <a class="btn enviar consultar_pedido">Consultar</a>
+                        <a class="btn enviar cancelar_pedido">Cancelar</a>                        
                     </form>
                     <div id="respuesta_consulta_pedido"></div>
           		</div>

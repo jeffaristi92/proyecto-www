@@ -1,4 +1,5 @@
 function agregarPlato(){
+
 	boton = document.getElementById('botonregistrarpedi');
 	boton.removeAttribute("disabled");
 	indice = document.getElementById("platos").selectedIndex;
@@ -28,6 +29,7 @@ function agregarPlato(){
 }
 
 function agregarAdicional(){
+
 	boton = document.getElementById('botonregistrarpedi');
 	boton.removeAttribute("disabled");
 	indice = document.getElementById("adicionales").selectedIndex;
@@ -144,19 +146,19 @@ function cancelarPedido(){
 }
 
 function confirmarPedido(){
+	
 	var xmlhttp = new XMLHttpRequest();
 	var idPedido = $("#idPedido").val();
 	window.open("factura.php?idPedido="+idPedido);
 }
 
 function validarboton(val,btx) {
+
 		boton = document.getElementById(btx);
 		if(val>0 || val==null || val==""){			
 			if (val==null || val=="") {boton.disabled=true} 
 			else {boton.disabled=false} 
-		} else {alert('Alguno de los valores ingresados es no numerico, un numero no valido');
+		} else {alert('Alguno de los valores ingresados es no numérico, un número no válido');
 			boton.disabled=true;
 		}
-
-		
 }

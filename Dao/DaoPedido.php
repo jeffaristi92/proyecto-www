@@ -86,7 +86,7 @@
 		public function consultarPlatosPedido($idPedido){
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, precio, (cantidad*precio) as total FROM Plato, plato_pedido WHERE plato_pedido.idPlato = plato.idPlato and plato_pedido.idPedido =".$idPedido)){
+			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, precio, (cantidad*precio) as total FROM Plato, Plato_Pedido WHERE plato_pedido.idPlato = plato.idPlato and plato_pedido.idPedido =".$idPedido)){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
@@ -106,7 +106,7 @@
 		public function consultarAdicionalesPedido($idPedido){
 			$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, precio, (cantidad*precio) as total FROM Adicional, adicional_pedido WHERE adicional_pedido.idAdicional = adicional.idAdicional and adicional_pedido.idPedido =".$idPedido)){
+			if ($stmt = $conexion->prepare("SELECT cantidad, nombre, precio, (cantidad*precio) as total FROM Adicional, Adicional_Pedido WHERE adicional_pedido.idAdicional = adicional.idAdicional and adicional_pedido.idPedido =".$idPedido)){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
@@ -163,7 +163,7 @@
 		public function consultarDatosEmpresa($idPedido){
 		$conexion = $this->conexionBd->conectar();
 
-			if ($stmt = $conexion->prepare("SELECT* FROM empresa WHERE idEmpresa in (select idEmpresa from usuario where usuario in (select idCajero from pedido where idPedido = ".$idPedido."))")){
+			if ($stmt = $conexion->prepare("SELECT* FROM Empresa WHERE idEmpresa in (select idEmpresa from Usuario where usuario in (select idCajero from Pedido where idPedido = ".$idPedido."))")){
 				        		
 				$stmt->execute();   
 		        $stmt->store_result();			
@@ -184,7 +184,7 @@
 		public function getTotalPlatosPedido($idPedido){
 			$valor = 0;
 			$conexion = $this->conexionBd->conectar();
-			if ($stmt = $conexion->prepare("SELECT sum(precio*cantidad) FROM plato, plato_pedido WHERE plato.idPlato = plato_pedido.idPlato and idPedido =".$idPedido)){   		
+			if ($stmt = $conexion->prepare("SELECT sum(precio*cantidad) FROM Plato, Plato_Pedido WHERE plato.idPlato = plato_pedido.idPlato and idPedido =".$idPedido)){   		
 				$stmt->execute();   
 		        $stmt->store_result();			
 	        	$stmt->bind_result($total);
@@ -200,7 +200,7 @@
 			$valor = 0;
 			
 			$conexion = $this->conexionBd->conectar();
-			if ($stmt = $conexion->prepare("SELECT sum(precio*cantidad) FROM adicional, Adicional_pedido WHERE adicional.idAdicional = adicional_pedido.idAdicional and idPedido =".$idPedido)){   		
+			if ($stmt = $conexion->prepare("SELECT sum(precio*cantidad) FROM Adicional, Adicional_Pedido WHERE adicional.idAdicional = adicional_pedido.idAdicional and idPedido =".$idPedido)){   		
 				$stmt->execute();   
 		        $stmt->store_result();			
 	        	$stmt->bind_result($total);
@@ -227,7 +227,7 @@
 		function getEmpresaPedido($idPedido){
 			$valor = -1;
 			$conexion = $this->conexionBd->conectar();
-			if ($stmt = $conexion->prepare("SELECT idEmpresa FROM usuario where usuario in (select idCajero from Pedido where idPedido = $idPedido)")){   		
+			if ($stmt = $conexion->prepare("SELECT idEmpresa FROM Usuario where usuario in (select idCajero from Pedido where idPedido = $idPedido)")){   		
 				$stmt->execute();   
 		        $stmt->store_result();			
 	        	$stmt->bind_result($empresa);

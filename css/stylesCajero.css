@@ -7,3 +7,45 @@
 	font-weight: bold;
 	font-size: 13px;
 }
+
+.enviar.registrar_pedido{
+	display: block;
+	float: right;
+	margin-right: 25%;
+}
+
+.enviar{
+	float: none;
+	display: inline-block;
+	margin-right: 2%;
+}
+
+
+/* Large desktop */
+@media (min-width: 1200px) {	
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 999px) {
+	.enviar.registrar_pedido{
+		margin-right: 10%;
+	}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {	
+	.enviar.registrar_pedido{
+		margin-right: 5%;
+	}
+
+	.enviar{
+		margin-bottom: 12px;
+	}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {	
+	.enviar.registrar_pedido{
+		margin-right: 5%;
+	}
+}
