@@ -16,5 +16,10 @@ require_once ('../Dao/DaoReporte.php');
 			$this->daoReporte->consultarVentas($idEmpresa);	
 		}
 
+		public function reporteMasVendidos($idEmpresa){
+			
+			$this->daoReporte->consultarMasVendidos($idEmpresa);	
+		}		
+
 	}//Fin clase
 ?>

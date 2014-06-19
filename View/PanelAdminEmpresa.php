@@ -26,7 +26,7 @@
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="../js/scriptsAdminEmpresa.js"></script> 
-    <script type="text/javascript" src="../js/script_reportes.js"></script> 
+    <script type="text/javascript" src="../js/scriptReportes.js"></script> 
    
   </head>
 
@@ -131,7 +131,27 @@
                 </div>               
               </div>
             </div>          
-        </div><!--desactivar_plato-->
+        </div><!--ventas_total-->
+
+        <div class="col-md-6 mas_vendidos">
+            <div class="wrapper">
+              <h3>Ventas Platos Más Vendidos</h3>
+
+              <div class="row">       
+                <div class="col-md-12">                           
+                   <div id="dashboard2">
+                      <div id="control2"></div>  
+                      <div>
+                        <div id="chart3"></div>  
+                      </div>                  
+                      <div>
+                        <div id="chart4"></div>
+                      </div>                  
+                  </div>               
+                </div>               
+              </div>
+            </div>          
+        </div><!--mas_vendidos-->
 
       </div><!--FIN row-->
     </div> <!--FIN Container-->
