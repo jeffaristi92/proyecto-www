@@ -23,7 +23,7 @@
 		        $stmt->store_result();
 		        //mensaje para mostrar al usuario
 				echo "*Pedido registrado con éxito</br>";
-				echo "Numero de pedido: ".$this->getNroPedido();
+				echo "Número de pedido: ".$this->getNroPedido();
 	        	
 	        }//Fin consulta
 
@@ -73,7 +73,7 @@
 	        	$stmt->bind_result($pedido,$fecha,$estado,$tipoPago,$idCajero);
 	       		$items = array();	       		
 	       		$stmt->fetch();
-				echo '<table id="datosPedido"><tr><td>Numero de pedido</td><td>'.$pedido.'</td></tr>';
+				echo '<table id="datosPedido"><tr><td>Número de pedido: </td><td> '.$pedido.'</td></tr>';
 				echo '<tr><td>Fecha</td><td>'.$fecha.'</td></tr>';
 				echo '<tr><td>Estado</td><td>'.$estado.'</td></tr>';
 				echo '<tr><td>Tipo de pago</td><td>'.$tipoPago.'</td></tr>';

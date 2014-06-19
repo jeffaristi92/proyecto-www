@@ -19,7 +19,9 @@
 	display: inline-block;
 	margin-right: 2%;
 }
-
+#respuesta_consulta_pedido{
+	margin-left: 30px;
+}
 
 /* Large desktop */
 @media (min-width: 1200px) {	
@@ -37,7 +39,6 @@
 	.enviar.registrar_pedido{
 		margin-right: 5%;
 	}
-
 	.enviar{
 		margin-bottom: 12px;
 	}
@@ -47,5 +48,8 @@
 @media (max-width: 480px) {	
 	.enviar.registrar_pedido{
 		margin-right: 5%;
+	}
+	.contenedor_contenido .wrapper {
+		height: 770px;
 	}
 }
